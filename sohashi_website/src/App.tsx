@@ -5,20 +5,20 @@ import "./css/Experience.css";
 import "./css/Header.css";
 import "./css/Projects.css";
 import "./css/Skills.css";
-import Header from "./components/Header";
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
+import Header from "./pages/Header";
+import About from "./pages/About";
+import Experience from "./pages/Experience";
+import Projects from "./pages/Projects";
+import Skills from "./pages/Skills";
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
       <About></About>
+      <Skills></Skills>
       <Experience></Experience>
       <Projects></Projects>
-      <Skills></Skills>
     </div>
   );
 }
