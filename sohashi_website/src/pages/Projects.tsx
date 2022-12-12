@@ -1,30 +1,17 @@
 import React, { useEffect } from 'react';
 
-import { useScript } from 'usehooks-ts'
+// const projects = [
+//     {
+//         tittle: "Yumemi-Frontend",
+//         date: "May 2022 - June 2022",
+//         msg: "A single page application (SPA) that displays the population change in each prefecture in Japan."
+//     }
+// ]
 
-// it's an example, use your types instead
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare const jQuery: any
-
-export default function Component() {
-  // Load the script asynchronously
-  const status = useScript(`https://code.jquery.com/jquery-3.5.1.min.js`, {
-    removeOnUnmount: false,
-  })
-
-  useEffect(() => {
-    if (typeof jQuery !== 'undefined') {
-      // jQuery is loaded => print the version
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      alert(jQuery.fn.jquery)
-    }
-  }, [status])
-
-  return (
-    <div>
-      <p>{`Current status: ${status}`}</p>
-
-      {status === 'ready' && <p>You can use the script here.</p>}
-    </div>
-  )
+export default function Projects() {
+    return (
+        <div>
+            hello
+        </div>
+    )
 }
