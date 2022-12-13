@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useScript } from 'usehooks-ts';
 import { Box, useColorModeValue, Grid, GridItem, SimpleGrid} from "@chakra-ui/react";
-import { LanguageCard } from "../components/LanguageCard"
+import { LanguageTag } from "../components/LanguageTag"
 // import TagCloud from "@types/react-tagcloud"
 
 
@@ -54,37 +54,39 @@ function Skills() {
     }, [status])
 
     return (
-        <Box className="Skills-Container" bg={useColorModeValue("gray.400", "gray.800")}>
-          <Grid templateColumns='repeat(2, 1fr)' gap={1}>
-            <GridItem>
-              <h1 className="skills-lang">Languages:</h1>
-              <SimpleGrid minChildWidth='100px' spacing='10px'>
-                {
-                  languages.map((lang, index) => {
-                    return (
-                      <LanguageCard key={index} msg={lang} />
-                    )
-                  })
-                }
-              </SimpleGrid>
-              <h1 className="skills-fw">Frameworks:</h1>
-              <SimpleGrid minChildWidth='100px' spacing='10px'>
-                {
-                  frameworks.map((fw, index) => {
-                    return (
-                      <LanguageCard key={index} msg={fw} />
-                    )
-                  })
-                }
-              </SimpleGrid>
-            </GridItem>
-            <GridItem>
-              <p>{sphere}</p>
-              <p>hello</p>
-            </GridItem>
-          </Grid>
-        </Box>
+      <>hello</>
     )
+
+        // <Box className="Skills-Container" bg={useColorModeValue("gray.400", "gray.800")}>
+        //   <Grid templateColumns='repeat(2, 1fr)' gap={1}>
+        //     <GridItem>
+        //       <h1 className="skills-lang">Languages:</h1>
+        //       <SimpleGrid minChildWidth='100px' spacing='10px'>
+        //         {
+        //           languages.map((lang, index) => {
+        //             return (
+        //               <LanguageTag key={index} msg={lang} />
+        //             )
+        //           })
+        //         }
+        //       </SimpleGrid>
+        //       <h1 className="skills-fw">Frameworks:</h1>
+        //       <SimpleGrid minChildWidth='100px' spacing='10px'>
+        //         {
+        //           frameworks.map((fw, index) => {
+        //             return (
+        //               <LanguageTag key={index} msg={fw} />
+        //             )
+        //           })
+        //         }
+        //       </SimpleGrid>
+        //     </GridItem>
+        //     <GridItem>
+        //       <p>{sphere}</p>
+        //       <p>hello</p>
+        //     </GridItem>
+        //   </Grid>
+        // </Box>
 }
 
 export default Skills;
