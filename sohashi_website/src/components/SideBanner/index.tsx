@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Side } from '../Layout/style';
 import getLogo from '../../data/Icons';
-import { HStack } from '@chakra-ui/react';
 
 const SocialMedia = [
     { name: 'GitHub', url: 'https://github.com/yuki-1184'}, 

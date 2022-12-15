@@ -13,8 +13,10 @@ import {
   Spacer,
   Switch,
   FormControl,
-  FormLabel
+  FormLabel,
+  useMediaQuery
 } from "@chakra-ui/react";
+
 // import { SkipNavLink } from '@chakra-ui/skip-nav'
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { MoonLogo } from '../../data/Icons';
@@ -41,6 +43,7 @@ export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [theme, setTheme] = useState(false);
   const [scrolled, setScrolled] = useState('false');
+//   const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
 
   useEffect(() => {
     const onScroll = () => {
@@ -56,7 +59,7 @@ export default function NavBar() {
 
   return (
       <StyledHeader>
-        <Flex h={16} alignItems={"center"} pl={'70px'} pr={'70px'}>
+        <Flex h={16} alignItems={"center"} pl={'60px'} pr={'60px'}>
           <Flex alignItems={"center"} w={'100%'}>
             <Box>
               {/* <SkipNavLink>

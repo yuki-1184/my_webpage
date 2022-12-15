@@ -6,11 +6,16 @@ import FooterNav from '../components/FooterNav';
 import styled from 'styled-components';
 
 const StyledHome = styled.section`
-    margin: 20px 150px;
+    margin: 20px auto;
     min-height: 70vh;
     text-align: left;
     padding: 0;
+    max-width: 1000px;
     /* font-family: 'Playfair Display', serif; */
+
+    @media (max-width: 1250px) {
+        margin: 20px 150px;
+    }
 
     @media (max-width: 768px) {
         margin: 20px 100px;
@@ -69,7 +74,7 @@ function Home() {
             in my third year of high school.
           </p>
           <div>
-            <FooterNav goto='/About'>Check out more About Me</FooterNav>
+            <FooterNav goto='/about'>Check out more About Me</FooterNav>
           </div>
         </StyledHome>
       </Layout>

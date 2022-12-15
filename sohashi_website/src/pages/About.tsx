@@ -1,23 +1,22 @@
 import React from "react";
 import {
-    Box,
-    useColorModeValue,
-    Image,
-    Grid,
-    GridItem,
-    Heading,
-    HStack,
-    Flex,
-    Stack
+  Box,
+  Text
 } from "@chakra-ui/react"
 // import source from "../Images/my_super_cool.jpg"
 import navGithub from "../Images/navGithub.svg"
 import navLinkedIn from "../Images/navLinkedIn.svg";
 import navInsta from "../Images/navInsta.svg";
+import Layout, { PageWrapper } from "../components/Layout";
+import Home from './Home'
 
 export default function About() {
     return (
-      <Box className="About" bg={useColorModeValue("gray.100", "gray.900")}>
+      <Home></Home>
+    )
+}
+
+{/* <Box className="About" bg={useColorModeValue("gray.100", "gray.900")}>
         <Grid
             templateAreas={`"img header1"
                             "img header2"`}
@@ -51,6 +50,4 @@ export default function About() {
             </Flex>
           </GridItem>
         </Grid>
-      </Box>
-    )
-}
+      </Box> */}

@@ -199,10 +199,15 @@ export const StyledBody = styled.body`
 `
 
 export const StyledHeader = styled.header`
-    padding: 50px 0px;
+    padding: 50px 40px;
     background: white;
     z-index: 12;
     width: 100%;
+    
+    @media (max-width: 768px) {
+        padding: 20px 0;
+    }
+
     /*
     ${(props) =>
         props.title === 'true'
@@ -229,6 +234,7 @@ export const BgText = styled.div`
     h1 {
         font-family: Abril FatFace;
         font-size: 27.42vmin;
+        font-weight: 600;
         /* Change bgtext based on page */
         ${(props) => 
             props.title === 'About Me' ||
@@ -304,10 +310,10 @@ export const Side = styled.div`
     position: fixed;
     z-index: 1;
     bottom: 0;
-    left: ${props => (props.title === 'left' ? '40px' : 'auto')};
-    right: ${props => (props.title === 'left' ? 'auto' : '40px')};
+    left: ${props => (props.title === 'left' ? '80px' : 'auto')};
+    right: ${props => (props.title === 'left' ? 'auto' : '80px')};
 
-    @media(max-width: 1080px) {
+    @media(max-width: 1280px) {
         left: ${props => (props.title === 'left' ? '20px' : 'auto')};
         right: ${props => (props.title === 'left' ? 'auto' : '20px')};
     }
