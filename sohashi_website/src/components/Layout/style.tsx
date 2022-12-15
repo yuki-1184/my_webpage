@@ -179,6 +179,7 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 //   }
 // `;
 
+
 export const Main = styled.main`
     background-image: linear-gradient(180deg, 
         rgba(0,0,0,0) calc(13% - 1px), 
@@ -188,6 +189,37 @@ export const Main = styled.main`
     background-attachment: fixed;
     // background-size: 1px 101px;
     min-height: 100vh;
+    z-index: -3;
+`
+
+export const StyledBody = styled.body`
+    position: relative;
+    height: 70vh;
+    z-index: -2;
+`
+
+export const StyledHeader = styled.header`
+    padding: 50px 0px;
+    background: white;
+    z-index: 12;
+    width: 100%;
+    /*
+    ${(props) =>
+        props.title === 'true'
+        ? css`
+            padding-bottom: 100px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+        ` 
+        : css `
+            padding: 50px 0px;
+            background: white;
+            z-index: 12;
+            width: 100%;
+        `
+    }: */
+    
 `
 
 export const BgText = styled.div`

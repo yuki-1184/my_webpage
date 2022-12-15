@@ -5,8 +5,8 @@ import { ReactComponent as Instagram } from '../Images/navInsta.svg';
 import { ReactComponent as LinkedIn } from '../Images/navLinkedIn.svg';
 import { ReactComponent as Facebook } from '../Images/navFacebook.svg';
 
-export const MoonLogo = () => {
-    return (<Moon />)
+export const MoonLogo = (w: string, h: string) => {
+    return (<Moon width={w} height={h}/>)
 }
 
 export default function getLogo( logotype: string, w: string, h: string) {
