@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect } from "react";
+import React, { ReactNode, useState, useEffect} from "react";
 import {
   Box,
   Flex,
@@ -17,14 +17,18 @@ import {
   useMediaQuery
 } from "@chakra-ui/react";
 
-// import { SkipNavLink } from '@chakra-ui/skip-nav'
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { MoonLogo } from '../../data/Icons';
 import { StyledHeader } from '../Layout/style';
 
-const Links = ["About", "Experience", "Projects", "Contact"];
+const Links = [
+    { goto: '/about', link: "About" }, 
+    { goto: '/experience', link: "Experience" }, 
+    { goto: '/projects', link: "Projects" }, 
+    { goto: 'contact', link:  "Contact" }
+];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
+const NavLink = ({ children, goto }: { children: ReactNode, goto: string }) => (
   <Link
     px={2}
     py={1}
@@ -33,7 +37,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={"#"}
+    href={goto}
   >
     {children}
   </Link>
@@ -65,7 +69,9 @@ export default function NavBar() {
               {/* <SkipNavLink>
                 <Text fontSize={'4xl'}><strong>SO.</strong></Text>
               </SkipNavLink> */}
-              <Text fontSize={'4xl'}><strong>SO.</strong></Text>
+              <Link href='/' _hover={{ textDecoration: 'none' }}>
+                <Text fontSize={'4xl'}><strong>SO.</strong></Text>
+              </Link>
             </Box>
             <Spacer />
             <Box>
@@ -74,8 +80,8 @@ export default function NavBar() {
                 spacing={5}
                 display={{ base: "none", md: "flex" }}
                 >
-                {Links.map((link) => (
-                    <NavLink key={link}>{link}</NavLink>
+                {Links.map(({goto, link} ) => (
+                    <NavLink goto={goto} key={link}>{link}</NavLink>
                 ))}
                 <Button colorScheme='teal' variant='outline'>
                     Resume
@@ -106,18 +112,17 @@ export default function NavBar() {
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+            <Stack as={"nav"} spacing={4} alignItems='center' justifyContent={'center'}>
+              {Links.map(({goto, link}) => (
+                <NavLink goto={goto} key={link}>{link}</NavLink>
               ))}
+              <Button colorScheme='teal' variant='outline'>Resume</Button>
             </Stack>
-            <Button colorScheme='teal' variant='outline' mt={'25px'}>
-              Resume
-            </Button>
+            
             <FormControl display='flex' alignItems='center' justifyContent={'center'} mt={'25px'}>
               <FormLabel htmlFor='dark-theme' onChange={() => setTheme(!theme)} mb='0'>
                 <HStack>
-                  {MoonLogo('24px', '24px')}
+                  {MoonLogo('22px', '22px')}
                   <Text>
                     Dark Theme
                   </Text>

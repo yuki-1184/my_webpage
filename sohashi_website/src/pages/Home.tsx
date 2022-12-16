@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
+import { SkipNavContent } from "@chakra-ui/skip-nav";
 import  Layout, { PageWrapper } from '../components/Layout'
 import FooterNav from '../components/FooterNav';
 import styled from 'styled-components';
@@ -61,6 +62,7 @@ function Home() {
     return (
       <Layout {...LayoutProps}>
         <StyledHome>
+          {/* <SkipNavContent /> */}
           <h1>Hi, my name is</h1>
           <h2 className='big-heading'>Satoki Ohashi</h2>
           <h3>Welcome to my website!!</h3>

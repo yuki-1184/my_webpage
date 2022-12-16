@@ -5,14 +5,12 @@ import "./css/Experience.css";
 import "./css/Header.css";
 import "./css/Projects.css";
 import "./css/Skills.css";
-import { SkipNavContent } from "@chakra-ui/skip-nav";
+// import { SkipNavContent } from "@chakra-ui/skip-nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import NavBar from "./components/NavBar";
-import Layout from './components/Layout';
 import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
-import Skills from "./pages/Skills";
+import Contact from "./pages/Contact";
 import Home from "./pages/Home"
 
 function App() {
@@ -23,7 +21,7 @@ function App() {
         <Route path='about' element={<About />}></Route>
         <Route path='experiences' element={<Experience />}></Route>
         <Route path='projects' element={<Projects />}></Route>
-        <Route path='skills' element={<Skills />}></Route>
+        <Route path='contact' element={<Contact />}></Route>
       </Routes>
     </BrowserRouter>
   )
