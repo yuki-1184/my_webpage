@@ -5,7 +5,6 @@ import {
   HStack,
   Link,
   IconButton,
-  Button,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -20,6 +19,8 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { MoonLogo } from '../../data/Icons';
 import { StyledHeader } from '../Layout/style';
+import styled from 'styled-components';
+import myResume from '../../data/myResume.pdf'
 
 const Links = [
     { goto: '/about', link: "About" }, 
@@ -83,9 +84,11 @@ export default function NavBar() {
                 {Links.map(({goto, link} ) => (
                     <NavLink goto={goto} key={link}>{link}</NavLink>
                 ))}
-                <Button colorScheme='teal' variant='outline'>
-                    Resume
-                </Button>
+                <StyledResume>
+                    <a href={myResume} target='_blank' rel="noopener noreferrer">
+                        Resume
+                    </a>
+                </StyledResume>
                 <Link>
                     <a 
                     className="nav-moon"
@@ -116,7 +119,11 @@ export default function NavBar() {
               {Links.map(({goto, link}) => (
                 <NavLink goto={goto} key={link}>{link}</NavLink>
               ))}
-              <Button colorScheme='teal' variant='outline'>Resume</Button>
+              <StyledResume>
+                <a href={myResume} target='_blank' rel="noopener noreferrer">
+                  Resume
+                </a>
+              </StyledResume>
             </Stack>
             
             <FormControl display='flex' alignItems='center' justifyContent={'center'} mt={'25px'}>
@@ -135,3 +142,15 @@ export default function NavBar() {
       </StyledHeader>
   );
 }
+
+const StyledResume = styled('div')`
+    a {
+        padding: 9px 16px;
+        border: solid #2C7A7B;
+        border-width: 1px;
+        border-radius: 5px;
+        color: #2C7A7B;
+        font-weight: 500;
+    }
+`
+// colorScheme='teal' variant='outline'
