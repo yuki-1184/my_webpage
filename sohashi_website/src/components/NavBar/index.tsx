@@ -47,7 +47,7 @@ export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [theme, setTheme] = useState(false);
   const [scrolled, setScrolled] = useState('false');
-//   const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
+  const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
 
   useEffect(() => {
     const onScroll = () => {
@@ -63,7 +63,7 @@ export default function NavBar() {
 
   return (
       <StyledHeader>
-        <Flex h={16} alignItems={"center"} pl={'60px'} pr={'60px'}>
+        <Flex h={16} alignItems={"center"} pl={isLargerThan800? '80px': '20px'} pr={ isLargerThan800? '80px': '20px'}>
           <Flex alignItems={"center"} w={'100%'}>
             <Box>
               {/* <SkipNavLink>
@@ -93,7 +93,7 @@ export default function NavBar() {
                         theme === false ? 'Light' : 'Dark'
                     } Mood`}
                     onClick={() => setTheme(!theme)}
-                    href='/#'
+                    href='/'
                     >
                     {MoonLogo('24px', '24px')}
                     </a>

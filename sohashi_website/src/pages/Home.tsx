@@ -19,7 +19,7 @@ const StyledHome = styled.section`
     }
 
     @media (max-width: 768px) {
-        margin: 20px 100px;
+        margin: 20px 20px;
     }
 
     h1 {

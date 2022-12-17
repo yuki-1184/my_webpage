@@ -181,11 +181,11 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 
 
 export const Main = styled.main`
-    background-image: linear-gradient(180deg, 
+    /* background-image: linear-gradient(180deg, 
         rgba(0,0,0,0) calc(13% - 1px), 
         rgba(240,240,240,1) calc(13%), 
         rgba(0,0,0,0) calc(13% + 1px)
-    );
+    ); */
     background-attachment: fixed;
     // background-size: 1px 101px;
     min-height: 100vh;
@@ -200,8 +200,8 @@ export const StyledBody = styled.body`
 
 export const StyledHeader = styled.header`
     padding: 50px 40px;
-    background: white;
-    z-index: 12;
+    background: transparent;
+    z-index: 3;
     width: 100%;
     
     @media (max-width: 768px) {
@@ -241,10 +241,11 @@ export const BgText = styled.div`
             props.title === 'Contact'  ||
             props.title === 'Home' 
             ? css `
-                writing-mode: ltr
+                writing-mode: ;
               `
             : css `
-                writing-mode: 
+                writing-mode: vertical-lr;
+                font-size: 24.42vmin;
               `}
         letter-spacing: -0.3rem;
         white-space: pre;
@@ -259,19 +260,41 @@ export const BgText = styled.div`
 
     
     @keyframes slidein {
-        from {
-            margin-left: 100%;
-            width: 300%;
-        }
+        ${(props) => 
+            props.title === 'About Me' ||
+            props.title === 'Contact'  ||
+            props.title === 'Home' 
+            ? css `
+                from {
+                    margin-left: 100%;
+                    width: 300%;
+                }
 
-        75% {
-            margin-left: 25%;
-            width: 150%;
-        }
+                75% {
+                    margin-left: 25%;
+                    width: 150%;
+                }
 
-        to {
-            margin-left: 0%;
-            width: 100%;
+                to {
+                    margin-left: 0%;
+                    width: 100%;
+                }
+              `
+            : css `
+                writing-mode: vertical-lr;
+                from {
+                    margin-bottom: 100%;
+                    height: 300%;
+                }
+                75% {
+                    margin-bottom: 25%;
+                    height: 150%;
+                }
+                to {
+                    margin-bottom: 0%;
+                    height: 0%;
+                }
+            `
         }
     }
 `
