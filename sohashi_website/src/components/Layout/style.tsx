@@ -269,12 +269,10 @@ export const BgText = styled.div`
                     margin-left: 100%;
                     width: 300%;
                 }
-
                 75% {
                     margin-left: 25%;
                     width: 150%;
                 }
-
                 to {
                     margin-left: 0%;
                     width: 100%;
@@ -286,13 +284,9 @@ export const BgText = styled.div`
                     margin-bottom: 100%;
                     height: 300%;
                 }
-                75% {
-                    margin-bottom: 25%;
-                    height: 150%;
-                }
                 to {
                     margin-bottom: 0%;
-                    height: 0%;
+                    height: 100%;
                 }
             `
         }

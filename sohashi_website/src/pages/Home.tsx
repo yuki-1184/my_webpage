@@ -6,6 +6,34 @@ import  Layout, { PageWrapper } from '../components/Layout'
 import FooterNav from '../components/FooterNav';
 import styled from 'styled-components';
 
+function Home() {
+    const LayoutProps = {
+        title: 'Home'
+    }
+    return (
+      <Layout {...LayoutProps}>
+        <StyledHome>
+          {/* <SkipNavContent /> */}
+          <h1>Hi, my name is</h1>
+          <h2 className='big-heading'>Satoki Ohashi</h2>
+          <h3>Welcome to my website!!</h3>
+          <p>
+            I'm an undergraduate student at University of California Santa Cruz majoing
+            in Computer Engineering / System Programming. I'm pursuing my career as a software
+            engineer.
+          </p>
+          <p>
+            A little bit about my background. I grew up in Tokyo Japan and moved to the United States 
+            in my third year of high school.
+          </p>
+          <div>
+            <FooterNav goto='/about'>Check out more About Me</FooterNav>
+          </div>
+        </StyledHome>
+      </Layout>
+    )
+}
+
 const StyledHome = styled.section`
     margin: 20px auto;
     min-height: 70vh;
@@ -54,33 +82,5 @@ const StyledHome = styled.section`
         padding: 5px 0px;
     }
 `
-
-function Home() {
-    const LayoutProps = {
-        title: 'Home'
-    }
-    return (
-      <Layout {...LayoutProps}>
-        <StyledHome>
-          {/* <SkipNavContent /> */}
-          <h1>Hi, my name is</h1>
-          <h2 className='big-heading'>Satoki Ohashi</h2>
-          <h3>Welcome to my website!!</h3>
-          <p>
-            I'm an undergraduate student at University of California Santa Cruz majoing
-            in Computer Engineering / System Programming. I'm pursuing my career as a software
-            engineer.
-          </p>
-          <p>
-            A little bit about my background. I grew up in Tokyo Japan and moved to the United States 
-            in my third year of high school.
-          </p>
-          <div>
-            <FooterNav goto='/about'>Check out more About Me</FooterNav>
-          </div>
-        </StyledHome>
-      </Layout>
-    )
-}
 
 export default Home;

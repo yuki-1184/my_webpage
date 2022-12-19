@@ -41,17 +41,6 @@ const projects = [
     },
 ]
 
-const test_project = {
-    title: 'Yumemi-Frontend',
-    date: 'May 2022 - June 2022',
-    description: 'Personal project to get started with web-development',
-    about: 'This is an open coding assesment provided by Yumemi Inc. Built a single page web application to display the population change in each prefecture in Japan.',
-    imageSrc: yumemi_frontend_img,
-    link: 'https://yuki-1184.github.io/yumemi-frontend/',
-    github: 'https://github.com/yuki-1184/yumemi-frontend',
-    technologies: ['JavaScript', 'React', 'RESAS API']
-}
-
 export default function Projects() {
     const LayoutProps = {
         title: 'Projects'
@@ -110,6 +99,6 @@ const StyledProjects = styled.section`
     div {
         padding: 10px;
         font-family: 'Playfair Display', serif;
-        text-alighn: left;
+        /* text-align: left; */
     }
 `

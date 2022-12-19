@@ -14,8 +14,6 @@ const StyledSideLeft = styled.ul`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    padding: 0;
     list-style: None;
 
     ::after {
@@ -46,8 +44,6 @@ const StyledSideRight = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    padding: 0;
     list-style: None;
 
     ::after {
@@ -59,9 +55,15 @@ const StyledSideRight = styled.div`
         background-color: #000000;
     }
     
-    p {
+    a {
         margin-bottom: 20px;
         writing-mode: tb-rl;
+        transition-property: margin-bottom, color;
+        transition: 2s ease-in-out;
+
+        &:hover {
+            color: blue;
+        }
     }
 `
 
@@ -79,7 +81,7 @@ export default function SideBar() {
             </Side>
             <Side title='right'>
                 <StyledSideRight>
-                    <p>yuki.1184apple@gmail.com</p>
+                    <a href='mailto:yuki.1184apple@gmail.com'>yuki.1184apple@gmail.com</a>
                 </StyledSideRight>
             </Side>
         </>

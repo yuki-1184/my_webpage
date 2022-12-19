@@ -93,7 +93,7 @@ const ProjectCard = (props: ProjectCardProps) => {
     )
 }
 
-interface IStyledProjectCard {
+type IStyledProjectCard = {
     img: string;
 }
 

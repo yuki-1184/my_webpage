@@ -1,92 +1,139 @@
-import React, { useEffect, useState } from "react";
-import { useScript } from 'usehooks-ts';
-import { Box, useColorModeValue, Grid, GridItem, SimpleGrid} from "@chakra-ui/react";
-import { LanguageTag } from "../components/LanguageTag"
-// import TagCloud from "@types/react-tagcloud"
+import { filterProps } from 'framer-motion';
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from '@chakra-ui/react';
 
+import Layout from '../components/Layout';
+import FooterNav from '../components/FooterNav';
 
-const languages: string[] = ["Python", "C/C++", "JavaScript", "TypeScript", "HTML"]
-const frameworks: string[] = ["React", "Vue", "Scikit-Learn", "TensorFlow", "Flask", "CSS"]
-const sphr_elems: string[] = [
-    "Python", "C/C++", "JavaScript", 
-    "TypeScript", "React", "Vue", 
-    "Scikit-Learn", "TensorFlow", "Flask", 
-    "Chakra", "HTML", "CSS"
-]
+const Contact = () => {
+  const [submitted, setSubmitted] = useState('initial')
 
-// const TagCloud = require('TagCloud');
-// const container = '.tagcloud';
-// const options = {};
-// const sphere = TagCloud(container, sphr_elems, options);
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare const TagCloud: any
-
-function Skills() {
-    const [sphere, setSphere] = useState('hello');
-    const status = useScript(`https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js`, {
-      removeOnUnmount: false,
-    })
-
-    useEffect(() => {
-      if (typeof TagCloud !== 'undefined') {
-        const tagCloud = TagCloud('.content', sphr_elems, {
-
-          // radius in px
-          radius: 300,
-        
-          // animation speed
-          // slow, normal, fast
-          maxSpeed: 'fast',
-          initSpeed: 'fast',
-        
-          // 0 = top
-          // 90 = left
-          // 135 = right-bottom
-          direction: 135,
-        
-          // interact with cursor move on mouse out
-          keep: true
-        
-        });
-        setSphere(tagCloud)
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    
+    const data = new FormData(event.target as HTMLFormElement);
+    fetch("https://formspree.io/f/mayzwepg", {
+      method: 'POST',
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+    }}).then(response => {
+      if (response.ok) {
+        setSubmitted('success')
+      } else {
+        setSubmitted('error')
       }
-    }, [status])
+    })
+  }
 
-    return (
-      <>hello</>
-    )
-
-        // <Box className="Skills-Container" bg={useColorModeValue("gray.400", "gray.800")}>
-        //   <Grid templateColumns='repeat(2, 1fr)' gap={1}>
-        //     <GridItem>
-        //       <h1 className="skills-lang">Languages:</h1>
-        //       <SimpleGrid minChildWidth='100px' spacing='10px'>
-        //         {
-        //           languages.map((lang, index) => {
-        //             return (
-        //               <LanguageTag key={index} msg={lang} />
-        //             )
-        //           })
-        //         }
-        //       </SimpleGrid>
-        //       <h1 className="skills-fw">Frameworks:</h1>
-        //       <SimpleGrid minChildWidth='100px' spacing='10px'>
-        //         {
-        //           frameworks.map((fw, index) => {
-        //             return (
-        //               <LanguageTag key={index} msg={fw} />
-        //             )
-        //           })
-        //         }
-        //       </SimpleGrid>
-        //     </GridItem>
-        //     <GridItem>
-        //       <p>{sphere}</p>
-        //       <p>hello</p>
-        //     </GridItem>
-        //   </Grid>
-        // </Box>
+  return (
+    <Layout title='Contact'>
+      <StyledContact>
+        <h1>Contact</h1>
+        <form onSubmit={handleSubmit} method="POST">
+          <StyledFormItem>
+            <input type='text' placeholder='*Full Name' name="name"></input>
+          </StyledFormItem>
+          <StyledFormItem>
+            <input type='email' placeholder='*Email Address' name="email"></input>
+          </StyledFormItem>
+          <StyledFormItem>
+            <textarea placeholder='*Message' name="message"></textarea>
+          </StyledFormItem>
+          <StyledFormItem>
+            <StyledButton type='submit' className='contact-button'>Send</StyledButton>
+            {submitted === 'success' && <p>Thank you</p>}
+            {submitted === 'error' && <p>An error occured</p>}
+          </StyledFormItem>
+        </form>
+        <div>
+          <FooterNav goto='/home'>Go Back Home</FooterNav>
+        </div>
+      </StyledContact>
+    </Layout>
+  )
 }
 
-export default Skills;
+const StyledContact = styled('section')`
+  margin: 20px auto;
+  min-height: 70vh;
+  text-align: left;
+  padding: 0;
+  max-width: 1000px;
+
+  @media (max-width: 1250px) {
+      margin: 20px 150px;
+  }
+
+  @media (max-width: 768px) {
+      margin: 20px 20px;
+  }
+
+  h1 {
+    margin: 0px 10px;
+    font-size: clamp(40px, 8vw, 80px);
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+  }
+
+  link {
+    margin: 10px 0px;
+  }
+`
+
+const StyledFormItem = styled('div')`
+  margin: 10px 10px;
+
+  input {
+    border: solid;
+    padding-left: 15px;
+    width: 80%;
+    max-width: 600px;
+    height: 65px;
+    border: solid;
+    border-radius: 20px;
+  }
+
+  textarea {
+    padding: 15px;
+    width: 80%;
+    max-width: 600px;
+    height: 240px;
+    border: solid;
+    border-radius: 20px;
+  }
+
+  /* p {
+    margin
+  } */
+`
+
+const StyledButton = styled.button`
+  margin: 20px 0px;
+  width: 150px;
+  background: black;
+  color: white;
+  padding: 9px 16px;
+  border-radius: 10px;
+  border: 1px solid black;
+  transition-property: background, color;
+  transition-duration: 200ms;
+
+  &:hover {
+    color: black;
+    background: white;
+  }
+`
+
+export default Contact;

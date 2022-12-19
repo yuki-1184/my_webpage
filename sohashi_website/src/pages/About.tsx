@@ -4,17 +4,23 @@ import {
   Text
 } from "@chakra-ui/react"
 // import source from "../Images/my_super_cool.jpg"
-import navGithub from "../Images/navGithub.svg"
-import navLinkedIn from "../Images/navLinkedIn.svg";
-import navInsta from "../Images/navInsta.svg";
+
+import styled from 'styled-components';
 import Layout, { PageWrapper } from "../components/Layout";
-import Home from './Home'
 
 export default function About() {
     return (
-      <Home></Home>
+      <Layout title='About Me'>
+        <StyledAbout>
+
+        </StyledAbout>
+      </Layout>
     )
 }
+
+const StyledAbout = styled('section')`
+
+`
 
 {/* <Box className="About" bg={useColorModeValue("gray.100", "gray.900")}>
         <Grid
