@@ -151,6 +151,12 @@ const StyledResume = styled('div')`
         border-radius: 5px;
         color: #2C7A7B;
         font-weight: 500;
+        transition-property: background;
+        transition-duration: 200ms;
+
+        &:hover {
+            background: #e1ffe1;
+        }
     }
 `
 // colorScheme='teal' variant='outline'

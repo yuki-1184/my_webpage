@@ -22,20 +22,15 @@ const StyledSideLeft = styled.ul`
         width: 1px;
         height: 100px;
         margin: 0 auto;
+        margin-top: 20px;
         background-color: #000000;
     }
+
     li {
-        &:last-of-type {
-          margin-bottom: 15px;
-        }
-    
-        a {
-          padding: 10px;
-    
-          &:hover,
-          &:focus {
+        margin: 12px;
+
+        &:hover {
             transform: translateY(-3px);
-          }
         }
     }
 `
@@ -59,10 +54,11 @@ const StyledSideRight = styled.div`
         margin-bottom: 20px;
         writing-mode: tb-rl;
         transition-property: margin-bottom, color;
-        transition: 2s ease-in-out;
+        transition: 0.1s;
 
         &:hover {
-            color: blue;
+            transform: translateY(-3px);
+            color: #2C7A7B;
         }
     }
 `
@@ -72,11 +68,13 @@ export default function SideBar() {
         <>
             <Side title='left'>
                 <StyledSideLeft>
-                    <li>
-                        {SocialMedia.map(({name, url}) => (
-                            <a href={url} key={name}>{getLogo(name, '20px', '20px')}</a>
-                        ))}
-                    </li>
+                    {SocialMedia.map(({name, url}) => (
+                        <li key={name}>
+                            <a href={url} target="_blank" rel="noreferrer">
+                                {getLogo(name, '22px', '22px')}
+                            </a>
+                        </li>
+                    ))}
                 </StyledSideLeft>
             </Side>
             <Side title='right'>
