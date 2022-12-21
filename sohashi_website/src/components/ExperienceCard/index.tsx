@@ -14,14 +14,15 @@ type ExperienceCardProps = {
 const ExperienceCard = (props: ExperienceCardProps) => {
     return (
       <StyledExperienceCard>
-        <div className='content'>
-          <div className='title'>
-            <h3>{props.type}</h3>
+        <StyledContent>
+          <StyledTitle>
+            <h3><strong>{props.type}</strong></h3>
             <span>
-              @
-              <a href={props.url} target='_blank' rel="noopener noreferrer">{props.title}</a>
+              <strong>
+                @<a href={props.url} target='_blank' rel="noopener noreferrer">{props.title}</a>
+              </strong>
             </span> 
-          </div>
+          </StyledTitle>
           <h3>{props.date}</h3>
           <p>{props.description}</p>
           <p>
@@ -29,7 +30,7 @@ const ExperienceCard = (props: ExperienceCardProps) => {
                 <span key={index}>{tech}</span>
             ))}
           </p>
-        </div>
+        </StyledContent>
       </StyledExperienceCard>
     )
 }
@@ -56,53 +57,51 @@ const StyledExperienceCard = styled('li')`
     transition: .5s;
   }
 
-
   &:hover:before {
-    background-color:#0F0;
+    background-color:#7b7b7b;
   }
+`
 
-  div {
+const StyledContent = styled('div')`
+  p {
+    padding: 5px 0px 5px 0px;
+    font-size: 15px;
 
-    p {
-      padding: 5px 0px 5px 0px;
-      font-size: 15px;
+    span {
+      margin-right: 12px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      background-color: rgba(186, 186, 186, 0.33);
 
-      span {
-        margin-right: 12px;
-        padding: 5px 12px;
-        border-radius: 20px;
-        font-size: 14px;
-        background-color: rgba(186, 186, 186, 0.33);
-
-        @media (max-width: 768px) {
-            margin-bottom: 12px;
-            display: inline-block;
-        }
+      @media (max-width: 768px) {
+        margin-bottom: 12px;
+        display: inline-block;
       }
     }
   }
+`
 
-  .title {
-    display: flex;
+const StyledTitle = styled('div')`
+  display: flex;
+
+  span {
+    margin: 0px 20px;
+
+    a {
+      margin: 0px 2px;
+        
+      &:hover {
+        text-decoration: underline;
+      }  
+    } 
+  }
+
+  @media (max-width: 768px) {
+    display: block;
 
     span {
-        margin: 0px 20px;
-
-        a {
-            margin: 0px 2px;
-            
-            &:hover {
-                text-decoration: underline;
-            }  
-        } 
-    }
-
-    @media (max-width: 768px) {
-        display: block;
-
-        span {
-            margin: 0;
-        }
+      margin: 0;
     }
   }
 `

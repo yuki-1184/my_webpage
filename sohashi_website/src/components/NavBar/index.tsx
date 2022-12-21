@@ -159,4 +159,3 @@ const StyledResume = styled('div')`
         }
     }
 `
-// colorScheme='teal' variant='outline'

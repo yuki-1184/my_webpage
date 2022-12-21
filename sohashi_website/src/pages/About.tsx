@@ -9,15 +9,12 @@ import ExperienceCard from "../components/ExperienceCard";
 import styled from 'styled-components';
 import Layout from "../components/Layout";
 
-const education = [
-  {
-    degree: 'Bachelor of Science, Computer Engineering',
-    school: 'University of California, Santa Cruz - Santa Cruz, CA',
-    date: 'Dec 2023 (Expected)',
-    clubs: 'Member of Japanese Student Association',
-    courses: ['Principles of Computer System Design', 'Algorithms and Abstract Data Types, Computer Architecture', 'Applied Machine Learning']
-  }
-]
+const education = {
+  degree: 'BS in Computer Engineering, University of California Santa Cruz',
+  date: 'Expected in Dec 2023',
+  clubs: 'Member of Japanese Student Association',
+  courses: ['Principles of Computer System Design', 'Algorithms and Abstract Data Types', 'Computer Architecture', 'Applied Machine Learning']
+}
 
 const experiences = [
   {
@@ -50,20 +47,28 @@ export default function About() {
             <h1>About Me</h1>
             <p>Hello! My name is Satoki and I&#39;m currently a </p>
           </StyledAbout>
-          <StyledEducation>
+          <StyledTimelineEducation>
             <h2>Education</h2>
-            <ul>
-              
-            </ul>
-          </StyledEducation>
-          <StyledTimeLine>
+            <div className="outer">
+              <StyledContent>
+                <h3><strong>{education.degree}</strong></h3>
+                <h4>({education.date})</h4>
+                <StyledCourses>
+                  {education.courses.map((course, index) => (
+                    <li key={index}>{course}</li>
+                  ))}
+                </StyledCourses>
+              </StyledContent>
+            </div>
+          </StyledTimelineEducation>
+          <StyledTimeLineExperience>
             <h2>Experiences</h2>
             <ul>
               {experiences.map((props, index) => (
                 <ExperienceCard key={index} {...props}></ExperienceCard>
               ))}
             </ul>
-          </StyledTimeLine>
+          </StyledTimeLineExperience>
           <FooterNav goto='/projects'>Check out my projects</FooterNav>
         </StyledAboutSection>
       </Layout>
@@ -96,33 +101,13 @@ const StyledAboutSection = styled('section')`
   }
 `
 
-const StyledTimeLine = styled('div')`
-  max-width: 1000px;
-  color:#000;
-  padding:30px 20px;
-
-  h2 {
-    margin: 10px 0px;
-    font-size: 24px;
-    font-family: 'Playfair Display', serif;
-  }
-
-  ul {
-    margin: 10px 10px;
-    list-style-type: none;
-    border-left: 2px solid #094a68;
-    padding: 0px 5px;
-  }
-`
-
 const StyledAbout = styled('div')`
   
 `
 
-const StyledEducation = styled('div')`
-  max-width: 1000px;
-  color:#000;
-  padding:30px 20px;
+const StyledTimeLineExperience = styled('div')`
+  padding:25px 20px;
+  max-width: 800px;
 
   h2 {
     margin: 10px 0px;
@@ -138,42 +123,75 @@ const StyledEducation = styled('div')`
   }
 `
 
-const StyledExperience = styled('div')`
-  
+const StyledTimelineEducation = styled('div')`
+  padding:25px 20px;
+  max-width: 800px;
+
+  h2 {
+    margin: 10px 0px;
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .outer {
+    margin: 10px 10px;
+    list-style-type: none;
+    border-left: 2px solid #094a68;
+    padding: 0px 5px;
+  }
+
+  li {
+    list-style-position: inside;
+  }
 `
 
-{/* <Box className="About" bg={useColorModeValue("gray.100", "gray.900")}>
-        <Grid
-            templateAreas={`"img header1"
-                            "img header2"`}
-            gridTemplateRows={'150px 150px'}
-            gridTemplateColumns={'400px 1fr'}
-            h='300px'
-        >
-          <GridItem pl='2' area={'img'}>
-            <Image
-                className="about-heading about-img"
-                borderRadius='full'
-                boxSize='300px'
-                src="https://bit.ly/dan-abramov"
-                alt='Satoki Ohashi'
-            />
-          </GridItem>
-          <GridItem pl='2' area={'header1'}>
-            <Heading className="about-heading about-msg1" as="h1">Software Engineer Based in Tokyo, Japan and California</Heading>
-          </GridItem>
-          <GridItem pl='2' area={'header2'}>
-            <p className="about-heading about-msg2">
-                Hi, I am Satoki Ohashi. I am currently an undergraduate student at 
-                University of California Santa Cruz and pursuing a career in Software Engineering.
-            </p>
-            <Flex pt='30px' justifyContent='flex-end' alignItems='center' direction='column'>
-                <Box className="about-links">
-                <a href="https://www.linkedin.com/in/satoki-ohashi-4ba513253/"><img className="about-img" src={navLinkedIn} alt="Linkedin" /></a>
-                <a href="https://www.instagram.com/Satoki716"><img className="about-img" src={navInsta} alt="Instagram" /></a>
-                <a href="https://github.com/yuki-1184"><img className="about-img" src={navGithub} alt="GitHub" /></a>
-                </Box>
-            </Flex>
-          </GridItem>
-        </Grid>
-      </Box> */}
+const StyledContent = styled('div')`
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: .5s;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 999px;
+    border: 3px solid #34ace0;
+    background: #fff;
+    left: -13px;
+    top: 16px;
+    transition: .5s;
+  }
+
+  &:hover:before {
+    background-color:#7b7b7b;
+  }
+
+  h4 {
+    padding-bottom: 5px;
+  }
+`
+
+const StyledCourses = styled('ul')`
+  list-style-type: none;
+
+  li {
+    position: relative;
+    margin: 7px 0px;
+    padding-left: 20px;
+
+    &:before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      color: var(--green);
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+`
