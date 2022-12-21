@@ -51,6 +51,7 @@ const Contact = () => {
               name="name" 
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </StyledFormItem>
           <StyledFormItem>
@@ -60,10 +61,17 @@ const Contact = () => {
               name="email" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </StyledFormItem>
           <StyledFormItem>
-            <textarea placeholder='*Message' name="message" value={message} onChange={(e) => setMessage(e.target.value)}/>
+            <textarea 
+              placeholder='*Message' 
+              name="message" 
+              value={message} 
+              onChange={(e) => setMessage(e.target.value)} 
+              required
+            />
           </StyledFormItem>
           <StyledFormItem>
             <StyledButton>

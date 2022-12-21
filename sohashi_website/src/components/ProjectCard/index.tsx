@@ -10,10 +10,8 @@ import {
     DrawerContent,
     DrawerCloseButton,
     Image,
-    Box,
 } from '@chakra-ui/react';
 import styled, { css } from 'styled-components';
-import { readBuilderProgram } from 'typescript';
 
 type ProjectCardProps = {
   title: string,
@@ -104,39 +102,6 @@ const StyledProjectCard = styled('li')<IStyledProjectCard>`
         border-radius: 11px;
         margin-top: 10px;
     }
-
-    /*
-    &:before,
-    &:after {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
-        background-size: 400% 400%;
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
-        border-radius: 11px;
-        z-index: -1;
-        animation: animate 10s ease-in-out alternate infinite;
-    }
-
-    &:after {
-        filter: blur(10px);
-    }
-
-    @keyframes animate{
-        0%{
-          background-position: 0 50%;
-        }
-        50%{
-          background-position: 100% 50%;
-        }
-        100%{
-          background-position: 0% 50%;
-        }
-    }
-    */
 
     div {
         height: 100%;
