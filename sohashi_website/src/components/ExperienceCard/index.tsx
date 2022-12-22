@@ -41,7 +41,6 @@ const StyledExperienceCard = styled('li')`
   padding-top: 10px;
   margin-bottom: 30px;
   position: relative;
-  cursor: pointer;
   transition: .5s;
 
   &:before {
@@ -66,6 +65,7 @@ const StyledContent = styled('div')`
   p {
     padding: 5px 0px 5px 0px;
     font-size: 15px;
+    color: #545454;
 
     span {
       margin-right: 12px;

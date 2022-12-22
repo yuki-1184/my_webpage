@@ -8,7 +8,6 @@ import "./css/Skills.css";
 // import { SkipNavContent } from "@chakra-ui/skip-nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
-import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home"
@@ -19,7 +18,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='about' element={<About />}></Route>
-        <Route path='experiences' element={<Experience />}></Route>
         <Route path='projects' element={<Projects />}></Route>
         <Route path='contact' element={<Contact />}></Route>
       </Routes>

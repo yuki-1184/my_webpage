@@ -23,8 +23,8 @@ import styled from 'styled-components';
 import myResume from '../../data/myResume.pdf'
 
 const Links = [
+    { goto: '/', link: "Home" },
     { goto: '/about', link: "About" }, 
-    { goto: '/experience', link: "Experience" }, 
     { goto: '/projects', link: "Projects" }, 
     { goto: 'contact', link:  "Contact" }
 ];

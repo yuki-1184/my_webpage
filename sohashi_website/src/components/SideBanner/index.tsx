@@ -20,7 +20,7 @@ const StyledSideLeft = styled.ul`
         content: '';
         display: block;
         width: 1px;
-        height: 100px;
+        height: 90px;
         margin: 0 auto;
         margin-top: 20px;
         background-color: #000000;

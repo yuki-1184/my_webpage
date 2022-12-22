@@ -180,7 +180,7 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 // `;
 
 
-export const Main = styled.main`
+export const Main = styled('main')`
     /* background-image: linear-gradient(180deg, 
         rgba(0,0,0,0) calc(13% - 1px), 
         rgba(240,240,240,1) calc(13%), 
@@ -192,13 +192,13 @@ export const Main = styled.main`
     z-index: -3;
 `
 
-export const StyledBody = styled.body`
+export const StyledBody = styled('body')`
     position: relative;
     height: 70vh;
     z-index: -2;
 `
 
-export const StyledHeader = styled.header`
+export const StyledHeader = styled('header')`
     padding: 50px 40px;
     background: transparent;
     z-index: 3;
@@ -208,8 +208,8 @@ export const StyledHeader = styled.header`
         padding: 20px 0;
     }
 
-    /*
-    ${(props) =>
+    
+    /* ${(props) =>
         props.title === 'true'
         ? css`
             padding-bottom: 100px;
@@ -227,7 +227,7 @@ export const StyledHeader = styled.header`
     
 `
 
-export const BgText = styled.div`
+export const BgText = styled('div')`
     margin: 0;
     overflow: hidden;
 
@@ -293,7 +293,7 @@ export const BgText = styled.div`
     }
 `
 
-export const BackLay = styled.div`
+export const BackLay = styled('div')`
   margin: 0;
 
   h1 {
@@ -322,7 +322,7 @@ export const BackLay = styled.div`
   }
 `;
 
-export const Side = styled.div`
+export const Side = styled('div')`
     width: 40px;
     position: fixed;
     z-index: 1;
@@ -340,7 +340,7 @@ export const Side = styled.div`
     }
 `;
 
-export const Main2 = styled.main`
+export const Main2 = styled('main')`
   /* background-image: radial-gradient(var(--pattern) 0.5px, transparent 0.5px),
     radial-gradient(var(--pattern) 0.5px, transparent 0.5px);
   background-size: calc(20 * 0.5px) calc(20 * 0.5px);

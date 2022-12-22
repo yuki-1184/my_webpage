@@ -5,6 +5,7 @@ import SideBar from '../SideBanner';
 import PropTypes from 'prop-types';
 import { Main, BgText, StyledBody } from './style';
 import { ScoutBar } from 'scoutbar';
+import { actions } from './scoutbar';
 
 // typeof LayoutProps = {
 // //   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
@@ -27,13 +28,7 @@ const Layout = ({children, title}: LayoutProps ) => {
             </h1>
           </BgText>
           <ScoutBar 
-            actions={({ createScoutAction }) => [
-            createScoutAction({
-                label: 'Get Started',
-                description: 'Get started with scoutbar',
-                href: '/',
-            }),
-            ]}
+            actions={actions}
           />
           {children}
         </Main>

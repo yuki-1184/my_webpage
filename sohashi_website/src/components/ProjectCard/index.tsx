@@ -67,24 +67,24 @@ const ProjectCard = (props: ProjectCardProps) => {
                     {props.link ? (
                         <>
                             <h2>Website</h2>
-                            <p>{props.link}</p>
+                            <p><a href={props.link} target="_blank" rel="noreferrer">{props.link}</a></p>
                         </>
                     ) : null }
                     {props.github ? (
                         <>
                             <h2>GitHub</h2>
-                            <p>{props.github}</p>
+                            <p><a href={props.github} target="_blank" rel="noreferrer">{props.github}</a></p>
                         </>
                     ) : null }
                 </StyledDrawerBody>
               </DrawerBody>
 
-              <DrawerFooter>
+              {/* <DrawerFooter>
                 <Button variant='outline' mr={3} onClick={onClose}>
                 Cancel
                 </Button>
                 <Button colorScheme='blue'>Save</Button>
-              </DrawerFooter>
+              </DrawerFooter> */}
             </DrawerContent>
           </Drawer>
         </StyledProjectCard>
@@ -196,6 +196,12 @@ const StyledDrawerBody = styled('div')`
             border-radius: 20px;
             font-size: 12px;
             background-color: rgba(186, 186, 186, 0.33);
+        }
+
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 `

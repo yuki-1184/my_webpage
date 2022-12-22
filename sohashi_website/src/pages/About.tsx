@@ -13,7 +13,7 @@ const education = {
   degree: 'BS in Computer Engineering, University of California Santa Cruz',
   date: 'Expected in Dec 2023',
   clubs: 'Member of Japanese Student Association',
-  courses: ['Principles of Computer System Design', 'Algorithms and Abstract Data Types', 'Computer Architecture', 'Applied Machine Learning']
+  courses: ['Computer System Design', 'Algorithms and Abstract Data Types', 'Computer Architecture', 'Applied Machine Learning']
 }
 
 const experiences = [
@@ -43,10 +43,26 @@ export default function About() {
     return (
       <Layout title='About Me'>
         <StyledAboutSection>
-          <StyledAbout>
+          <StyledAboutIntro>
             <h1>About Me</h1>
-            <p>Hello! My name is Satoki and I&#39;m currently a </p>
-          </StyledAbout>
+            <div>
+              <p>
+                Hello, my name is Satoki and I am a fourth year computer engineering student at University of California, Santa Cruz. 
+                I have always been fascinated by the power of technology to solve problems and make a positive impact in the world, and that is 
+                what drew me to a career in computer engineering. 
+              </p>
+              <p>
+                Throughout my time at UC Santa Cruz, I have gained a strong foundation in computer 
+                science principles and have developed skills in a variety of programming languages and frameworks. I am constantly seeking new 
+                opportunities to learn and grow as a professional, and am always open to challenges that push me to think creatively and find 
+                innovative solutions. 
+              </p>
+              <p>
+                In my free time, I enjoy exploring the outdoors, playing sports, and staying up-to-date on the latest 
+                developments in the tech industry. I am excited to connect with others in the field and to begin my career as a software engineer. 
+              </p>
+            </div>
+          </StyledAboutIntro>
           <StyledTimelineEducation>
             <h2>Education</h2>
             <div className="outer">
@@ -95,18 +111,22 @@ const StyledAboutSection = styled('section')`
     font-family: 'Playfair Display', serif;
     font-weight: 500;
   }
+`
 
-  p {
-    color: #545454;
+const StyledAboutIntro = styled('div')`
+  max-width: 800px;
+  div {
+    padding: 20px;
+
+    p {
+      padding: 0px 0px 15px;
+      color: #545454;
+    }
   }
 `
 
-const StyledAbout = styled('div')`
-  
-`
-
 const StyledTimeLineExperience = styled('div')`
-  padding:25px 20px;
+  padding:20px 20px;
   max-width: 800px;
 
   h2 {
@@ -124,7 +144,7 @@ const StyledTimeLineExperience = styled('div')`
 `
 
 const StyledTimelineEducation = styled('div')`
-  padding:25px 20px;
+  padding:20px 20px;
   max-width: 800px;
 
   h2 {
@@ -151,7 +171,6 @@ const StyledContent = styled('div')`
   padding-top: 10px;
   margin-bottom: 30px;
   position: relative;
-  cursor: pointer;
   transition: .5s;
 
   &:before {
@@ -183,6 +202,8 @@ const StyledCourses = styled('ul')`
     position: relative;
     margin: 7px 0px;
     padding-left: 20px;
+    font-size: 15px;
+    color: #545454;
 
     &:before {
       content: '▹';

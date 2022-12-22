@@ -15,7 +15,20 @@ function Home() {
         <StyledHome>
           {/* <SkipNavContent /> */}
           <h1>Hi, my name is</h1>
-          <h2 className='big-heading'>Satoki Ohashi</h2>
+          <h2 className='big-heading'>
+            <span>S</span>
+            <span>a</span>
+            <span>t</span>
+            <span>o</span>
+            <span>k</span>
+            <span>i</span>
+            <span className='Lastname'>O</span>
+            <span>h</span>
+            <span>a</span>
+            <span>s</span>
+            <span>h</span>
+            <span>i</span>
+          </h2>
           <h3>Welcome to my website!!</h3>
           <p>
             I'm an undergraduate student at University of California Santa Cruz majoing
@@ -53,9 +66,6 @@ const StyledHome = styled.section`
     h1 {
         margin: 0 0 20px 5px;
         color: var(--green);
-        // font-family: var(--font-mono);
-        // font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
-        // font-weight: 400;
     }
     h2 {
         margin: 0px;
@@ -63,6 +73,19 @@ const StyledHome = styled.section`
         font-weight: 600;
         line-height: 1.1;
         text-shadow: 2px 2px #FF0000;
+
+        span {
+            transition: 0.3s ease-in-out;
+            display: inline-block;
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+        
+        .Lastname {
+            padding-left: 15px;
+        }
     }
     h3 {
         margin-top: 10px;
@@ -78,7 +101,7 @@ const StyledHome = styled.section`
     
     div {
         font-family: 'Playfair Display', serif;
-        text-aligh: left;
+        text-align: left;
         padding: 5px 0px;
     }
 `
