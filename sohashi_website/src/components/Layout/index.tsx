@@ -1,11 +1,12 @@
 // import { LayoutProps } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState, useContext, createContext } from 'react';
 import NavBar from '../NavBar';
 import SideBar from '../SideBanner';
-import PropTypes from 'prop-types';
 import { Main, BgText, StyledBody } from './style';
 import { ScoutBar } from 'scoutbar';
 import { actions } from './scoutbar';
+import GlobalStyle from '../../styles/GlobalStyle';
+
 
 // typeof LayoutProps = {
 // //   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
@@ -18,20 +19,33 @@ type LayoutProps = {
 }
 
 const Layout = ({children, title}: LayoutProps ) => {
+    const [theme, setTheme ] = useState('light');
+
+    const toggleTheme = () => {
+      if (theme === 'light') {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+    }
+
+    console.log(theme);
+
     return (
-        <Main>
-          <NavBar />
-          <SideBar />
-          <BgText title={title}>
-            <h1 aria-hidden="true">
-            {title === 'Home' ? 'Hello, There.' : title.concat('.')}
-            </h1>
-          </BgText>
-          <ScoutBar 
-            actions={actions}
-          />
-          {children}
-        </Main>
+      <Main>
+        <GlobalStyle theme={theme}/>
+        <NavBar theme={theme} toggleTheme={toggleTheme}/>
+        <SideBar theme={theme} />
+        <BgText title={title}>
+          <h1 aria-hidden="true">
+          {title === 'Home' ? 'Hello, There.' : title.concat('.')}
+          </h1>
+        </BgText>
+        <ScoutBar 
+          actions={actions}
+        />
+        {children}
+      </Main>
     )
 }
 

@@ -47,9 +47,9 @@ const ProjectCard = (props: ProjectCardProps) => {
             size={'md'}
           >
             <DrawerOverlay />
-            <DrawerContent bgColor={'rgb(252,255,233)'}>
+            <DrawerContent bgColor={'#FFFFE0'}>
               <DrawerCloseButton />
-              <DrawerHeader borderBottomWidth={'1px'} borderBottomColor={'rbg(90, 90, 90)'}>{props.title}</DrawerHeader>
+              <DrawerHeader borderBottomWidth={'1px'} borderBottomColor={'rbg(0, 0, 0)'}>{props.title}</DrawerHeader>
 
               <DrawerBody>
                 <StyledDrawerBody>
@@ -108,7 +108,7 @@ const StyledProjectCard = styled('li')<IStyledProjectCard>`
         width: 100%;        
         border-radius: 10px;
         background-image: linear-gradient(to bottom, rgba(214, 214, 214, 0.12), rgba(186, 186, 186, 0.33)),
-        url(${props => props.img});
+          url(${props => props.img});
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -179,6 +179,7 @@ const StyledDrawerBody = styled('div')`
 
     img {
         margin: 20px 0px;
+        border: 1px solid var(--dark-gray);
     }
 
     h2 {
@@ -195,7 +196,7 @@ const StyledDrawerBody = styled('div')`
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 12px;
-            background-color: rgba(186, 186, 186, 0.33);
+            background-color: var(--gray-tagbg);
         }
 
         a {

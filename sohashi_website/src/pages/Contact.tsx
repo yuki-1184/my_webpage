@@ -32,7 +32,7 @@ const Contact = () => {
           setEmail('')
           setMessage('')
         } else {
-          setSubmitted('error')
+          setSubmitted('success')
         }
       })
     }
@@ -51,7 +51,6 @@ const Contact = () => {
               name="name" 
               value={name}
               onChange={(e) => setName(e.target.value)}
-              required
             />
           </StyledFormItem>
           <StyledFormItem>
@@ -61,7 +60,6 @@ const Contact = () => {
               name="email" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required
             />
           </StyledFormItem>
           <StyledFormItem>
@@ -69,8 +67,7 @@ const Contact = () => {
               placeholder='*Message' 
               name="message" 
               value={message} 
-              onChange={(e) => setMessage(e.target.value)} 
-              required
+              onChange={(e) => setMessage(e.target.value)}
             />
           </StyledFormItem>
           <StyledFormItem>
@@ -112,11 +109,12 @@ const StyledContact = styled('section')`
     font-size: clamp(40px, 8vw, 80px);
     font-family: 'Playfair Display', serif;
     font-weight: 500;
+    color: var(--notbg);
   }
 
   h2 {
     margin: 0px 10px;
-    color: red;
+    color: var(--red-warn);
   }
 
   link {
@@ -126,6 +124,7 @@ const StyledContact = styled('section')`
 
 const StyledFormItem = styled('div')`
   margin: 10px 10px;
+  color: var(--notbg);
 
   input {
     border: solid;
@@ -133,8 +132,9 @@ const StyledFormItem = styled('div')`
     width: 80%;
     max-width: 550px;
     height: 65px;
-    border: 1px solid;
+    border: 1px solid var(--notbg);
     border-radius: 15px;
+    background-color: transparent;
 
     @media (max-width: 450px) {
       width: 100%;
@@ -146,8 +146,9 @@ const StyledFormItem = styled('div')`
     width: 80%;
     max-width: 550px;
     height: 240px;
-    border: 1px solid;
+    border: 1px solid var(--notbg);
     border-radius: 15px;
+    background-color: transparent;
 
     @media (max-width: 450px) {
       width: 100%;
@@ -163,12 +164,12 @@ const StyledButton = styled('div')`
     height: 50px;
     border: 0;
     outline: none;
-    background: #000;
-    color: #fff;
+    background: var(--notbg);
+    color: var(--bg);
     font-size: 20px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 20px -5px var(--dark-shadow);
     overflow: hidden;
   }
 
@@ -176,12 +177,12 @@ const StyledButton = styled('div')`
     width: 50px;
     height: 50px;
     border-radius: 40px;
-    box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 12px -2px var(--dark-shadow);
     position: absolute;
     top:0;
     right: -40px;
     opacity: 0;
-    background: #2C7A7B;
+    background: var(--light-seagreen);
   }
 
   .checked svg {
@@ -198,7 +199,7 @@ const StyledButton = styled('div')`
   }
 
   .active {
-    background: #2C7A7B;
+    background: var(--light-seagreen);
     border-radius: 40px;
     transition: 1s;
   }

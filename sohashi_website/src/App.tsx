@@ -1,16 +1,11 @@
-import React from "react";
-import "./css/App.css";
-import "./css/About.css";
-import "./css/Experience.css";
-import "./css/Header.css";
-import "./css/Projects.css";
-import "./css/Skills.css";
+import React, { useContext } from "react";
 // import { SkipNavContent } from "@chakra-ui/skip-nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home"
+import './App.css';
 
 function App() {
   return (

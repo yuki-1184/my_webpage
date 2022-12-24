@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Side } from '../Layout/style';
 import getLogo from '../../data/Icons';
 
@@ -10,29 +10,41 @@ const SocialMedia = [
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/satoki-ohashi-4ba513253/'}
 ]
 
-const StyledSideLeft = styled.ul`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: None;
+type StyledSideLeftProps = {
+  theme: string;
+}
 
-    ::after {
-        content: '';
-        display: block;
-        width: 1px;
-        height: 90px;
-        margin: 0 auto;
-        margin-top: 20px;
-        background-color: #000000;
+const StyledSideLeft = styled('ul')<StyledSideLeftProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: None;
+
+  ::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: var(--notbg);
+  }
+
+  li {
+    margin: 12px;
+    color: var(--notbg);
+
+    &:hover {
+      transform: translateY(-3px);
     }
 
-    li {
-        margin: 12px;
-
-        &:hover {
-            transform: translateY(-3px);
-        }
+    ${(props) => props.theme === 'dark'
+      ? css `
+        filter: invert(1);
+      `
+      : null
     }
+  }
 `
 
 const StyledSideRight = styled.div`
@@ -47,7 +59,7 @@ const StyledSideRight = styled.div`
         width: 1px;
         height: 100px;
         margin: 0 auto;
-        background-color: #000000;
+        background-color: var(--notbg);
     }
     
     a {
@@ -55,34 +67,40 @@ const StyledSideRight = styled.div`
         writing-mode: tb-rl;
         transition-property: margin-bottom, color;
         transition: 0.1s;
+        color: var(--notbg);
 
         &:hover {
             transform: translateY(-3px);
-            color: #2C7A7B;
+            color: var(--dark-cyan);
         }
     }
 `
 
-export default function SideBar() {
+type SideBarProps = {
+  theme: string,
+}
+
+const SideBar = ({ theme }: SideBarProps ) => {
     return (
-        <>
-            <Side title='left'>
-                <StyledSideLeft>
-                    {SocialMedia.map(({name, url}) => (
-                        <li key={name}>
-                            <a href={url} target="_blank" rel="noreferrer">
-                                {getLogo(name, '22px', '22px')}
-                            </a>
-                        </li>
-                    ))}
-                </StyledSideLeft>
-            </Side>
-            <Side title='right'>
-                <StyledSideRight>
-                    <a href='mailto:yuki.1184apple@gmail.com'>yuki.1184apple@gmail.com</a>
-                </StyledSideRight>
-            </Side>
-        </>
-        
+      <>
+        <Side title='left'>
+          <StyledSideLeft theme={theme}>
+            {SocialMedia.map(({name, url}) => (
+              <li key={name}>
+                <a href={url} target="_blank" rel="noreferrer">
+                  {getLogo(name, '22px', '22px')}
+                </a>
+              </li>
+            ))}
+          </StyledSideLeft>
+        </Side>
+        <Side title='right'>
+          <StyledSideRight>
+            <a href='mailto:yuki.1184apple@gmail.com'>yuki.1184apple@gmail.com</a>
+          </StyledSideRight>
+        </Side>
+      </>   
     )
 }
+
+export default SideBar;

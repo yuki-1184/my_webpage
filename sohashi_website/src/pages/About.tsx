@@ -110,17 +110,22 @@ const StyledAboutSection = styled('section')`
     font-size: clamp(40px, 8vw, 80px);
     font-family: 'Playfair Display', serif;
     font-weight: 500;
+    color: var(--notbg);
   }
 `
 
 const StyledAboutIntro = styled('div')`
   max-width: 800px;
+  h1 {
+    color: var(--notbg);
+  }
+
   div {
     padding: 20px;
 
     p {
       padding: 0px 0px 15px;
-      color: #545454;
+      color: var(--gray-text);
     }
   }
 `
@@ -133,12 +138,13 @@ const StyledTimeLineExperience = styled('div')`
     margin: 10px 0px;
     font-size: 24px;
     font-family: 'Playfair Display', serif;
+    color: var(--notbg);
   }
 
   ul {
     margin: 10px 10px;
     list-style-type: none;
-    border-left: 2px solid #094a68;
+    border-left: 2px solid var(--dark-grayblue);
     padding: 0px 5px;
   }
 `
@@ -151,12 +157,13 @@ const StyledTimelineEducation = styled('div')`
     margin: 10px 0px;
     font-size: 24px;
     font-family: 'Playfair Display', serif;
+    color: var(--notbg);
   }
 
   .outer {
     margin: 10px 10px;
     list-style-type: none;
-    border-left: 2px solid #094a68;
+    border-left: 2px solid var(--dark-grayblue);
     padding: 0px 5px;
   }
 
@@ -179,19 +186,24 @@ const StyledContent = styled('div')`
     width: 15px;
     height: 15px;
     border-radius: 999px;
-    border: 3px solid #34ace0;
-    background: #fff;
+    border: 3px solid var(--light-skyblue);
+    background: var(--bg);
     left: -13px;
     top: 16px;
     transition: .5s;
   }
 
   &:hover:before {
-    background-color:#7b7b7b;
+    background-color: var(--dark-grayblue);
+  }
+
+  h3 {
+    color: var(--notbg);
   }
 
   h4 {
     padding-bottom: 5px;
+    color: var(--notbg);
   }
 `
 
@@ -203,14 +215,13 @@ const StyledCourses = styled('ul')`
     margin: 7px 0px;
     padding-left: 20px;
     font-size: 15px;
-    color: #545454;
+    color: var(--gray-text);
 
     &:before {
       content: '▹';
       position: absolute;
       left: 0;
       top: 6px;
-      color: var(--green);
       font-size: 12px;
       line-height: 12px;
     }

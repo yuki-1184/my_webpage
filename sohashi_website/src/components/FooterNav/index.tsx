@@ -31,7 +31,7 @@ const StyledFooterNav = styled('div')`
     display: flex;
     align-items: center;
     height: 100%;
-    margin: 50px 10px;
+    padding: 50px 10px;
     font-family: 'Playfair Display', serif;
     z-index: -3;
 
@@ -50,7 +50,7 @@ const StyledFooterNav = styled('div')`
     }
     .the-arrow.-left > .shaft:before, .the-arrow.-left > .shaft:after {
         width: 0;
-        background-color: #4a4a4a;
+        background-color: var(--dark-slategray);
     }
     .the-arrow.-left > .shaft:before {
         transform: rotate(0);
@@ -77,7 +77,7 @@ const StyledFooterNav = styled('div')`
         transform: rotate(-40deg);
     }
     .the-arrow > .shaft {
-        background-color: #4a4a4a;
+        background-color: var(--dark-slategray);
         display: block;
         height: 1px;
         position: relative;
@@ -86,7 +86,7 @@ const StyledFooterNav = styled('div')`
         will-change: transform;
     }
     .the-arrow > .shaft:before, .the-arrow > .shaft:after {
-        background-color: #4a4a4a;
+        background-color: var(--dark-slategray);
         content: '';
         display: block;
         height: 1px;
@@ -104,7 +104,7 @@ const StyledFooterNav = styled('div')`
     }
     .animated-arrow {
         display: inline-block;
-        color: #4a4a4a;
+        color: var(--dark-slategray);
         font-size: 1.25em;
         font-style: italic;
         text-decoration: none;
@@ -112,17 +112,17 @@ const StyledFooterNav = styled('div')`
         transition: all 0.2s;
     }
     .animated-arrow:hover {
-        color: #000;
+        color: var(--notbg);
     }
     .animated-arrow:hover > .the-arrow.-left > .shaft {
         width: 64px;
         transition-delay: 0.1s;
-        background-color: #000;
+        background-color: var(--notbg);
     }
     .animated-arrow:hover > .the-arrow.-left > .shaft:before, .animated-arrow:hover > .the-arrow.-left > .shaft:after {
         width: 8px;
         transition-delay: 0.1s;
-        background-color: #000;
+        background-color: var(--notbg);
     }
     .animated-arrow:hover > .the-arrow.-left > .shaft:before {
         transform: rotate(40deg);

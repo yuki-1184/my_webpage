@@ -49,30 +49,32 @@ const StyledExperienceCard = styled('li')`
     width: 15px;
     height: 15px;
     border-radius: 999px;
-    border: 3px solid #34ace0;
-    background: #fff;
+    border: 3px solid var(--light-skyblue);
+    background: var(--bg);
     left: -13px;
     top: 16px;
     transition: .5s;
   }
 
   &:hover:before {
-    background-color:#7b7b7b;
+    background-color: var(--dark-grayblue);
   }
 `
 
 const StyledContent = styled('div')`
+  color: var(--notbg);
+
   p {
     padding: 5px 0px 5px 0px;
     font-size: 15px;
-    color: #545454;
+    color: var(--gray-text);
 
     span {
       margin-right: 12px;
       padding: 5px 12px;
       border-radius: 20px;
       font-size: 14px;
-      background-color: rgba(186, 186, 186, 0.33);
+      background-color: var(--gray-tagbg);
 
       @media (max-width: 768px) {
         margin-bottom: 12px;
@@ -84,6 +86,7 @@ const StyledContent = styled('div')`
 
 const StyledTitle = styled('div')`
   display: flex;
+  color: var(--notbg);
 
   span {
     margin: 0px 20px;

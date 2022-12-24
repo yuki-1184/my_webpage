@@ -81,6 +81,7 @@ const StyledProjects = styled.section`
         font-size: clamp(40px, 8vw, 80px);
         font-family: 'Playfair Display', serif;
         font-weight: 500;
+        color: var(--notbg);
     }
 
     ul {
@@ -97,7 +98,7 @@ const StyledProjects = styled.section`
     }
 
     div {
-        padding: 10px;
+        padding: 30px 10px;
         font-family: 'Playfair Display', serif;
         /* text-align: left; */
     }
