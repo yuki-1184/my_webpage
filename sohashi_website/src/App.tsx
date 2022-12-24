@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 // import { SkipNavContent } from "@chakra-ui/skip-nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/About";

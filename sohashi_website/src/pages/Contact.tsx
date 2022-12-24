@@ -32,7 +32,7 @@ const Contact = () => {
           setEmail('')
           setMessage('')
         } else {
-          setSubmitted('success')
+          setSubmitted('error')
         }
       })
     }
@@ -51,6 +51,7 @@ const Contact = () => {
               name="name" 
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </StyledFormItem>
           <StyledFormItem>
@@ -60,6 +61,7 @@ const Contact = () => {
               name="email" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </StyledFormItem>
           <StyledFormItem>
@@ -68,6 +70,7 @@ const Contact = () => {
               name="message" 
               value={message} 
               onChange={(e) => setMessage(e.target.value)}
+              required
             />
           </StyledFormItem>
           <StyledFormItem>
@@ -169,7 +172,7 @@ const StyledButton = styled('div')`
     font-size: 20px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 6px 20px -5px var(--dark-shadow);
+    box-shadow: 0 6px 20px -5px var(--box-shadow);
     overflow: hidden;
   }
 
@@ -177,7 +180,7 @@ const StyledButton = styled('div')`
     width: 50px;
     height: 50px;
     border-radius: 40px;
-    box-shadow: 0 0 12px -2px var(--dark-shadow);
+    box-shadow: 0 0 12px -2px var(--box-shadow);
     position: absolute;
     top:0;
     right: -40px;

@@ -148,16 +148,16 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps ) => {
 const StyledResume = styled('div')`
   a {
     padding: 9px 16px;
-    border: solid var(--dark-cyan);
+    border: solid var(--button-border);
     border-width: 1px;
     border-radius: 5px;
-    color: var(--dark-cyan);
+    color: var(--button-border);
     font-weight: 500;
     transition-property: background;
     transition-duration: 200ms;
 
     &:hover {
-      background: var(--light-cyan);
+      background: var(--button-background);
     }
   }
 `

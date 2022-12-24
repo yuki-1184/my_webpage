@@ -93,12 +93,12 @@ const StyledHome = styled.section`
         font-size: clamp(35px, 7vw, 75px);
         font-weight: 500;
         line-height: 1.0;
-        color: var(--dark-slategray);
+        color: var(--home-welcome);
     }
     p {
         margin: 20px 20px 10px 3px;
         max-width: 640px;
-        color: var(--gray-text);
+        color: var(--article-color);
     }
     
     div {

@@ -71,7 +71,7 @@ const StyledSideRight = styled.div`
 
         &:hover {
             transform: translateY(-3px);
-            color: var(--dark-cyan);
+            color: var(--sidebar-mail);
         }
     }
 `

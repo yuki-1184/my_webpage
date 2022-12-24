@@ -1,6 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { 
-    Button, 
     useDisclosure,
     Drawer,
     DrawerBody,
@@ -11,7 +10,7 @@ import {
     DrawerCloseButton,
     Image,
 } from '@chakra-ui/react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 type ProjectCardProps = {
   title: string,
@@ -96,52 +95,50 @@ type IStyledProjectCard = {
 }
 
 const StyledProjectCard = styled('li')<IStyledProjectCard>`
-    & {
-        min-height: 325px;
-        position: relative;
-        border-radius: 11px;
-        margin-top: 10px;
-    }
+    min-height: 325px;
+    position: relative;
+    border-radius: 11px;
+    margin-top: 10px;
 
     div {
         height: 100%;
         width: 100%;        
         border-radius: 10px;
-        background-image: linear-gradient(to bottom, rgba(214, 214, 214, 0.12), rgba(186, 186, 186, 0.33)),
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.16)),
           url(${props => props.img});
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        transition: bagkground-image 10s ease-in-out;
+        transition: 3s ease-in-out;
 
         h1 {
-            display: none;
             position: absolute;
-            bottom: 30%;
-            color: white;
+            bottom: 21%;
+            color: var(--white);
             font-size: 26px;
             font-weight: 700;
             opacity: 0;
-            transition: 3s ease-in-out;
+            transition-property: opacity, bottom;
+            transition: 0.5s ease-in-out;
         }
         h2 {
-            display: none;
             padding: 0px 20px;
             position: absolute;
-            bottom: 20%;
-            color: white;
+            bottom: 11%;
+            color: var(--white);
             opacity: 0;
-            transition: 3s ease-in-out;
+            transition-property: opacity, bottom;
+            transition: 0.5s ease-in-out;
         }
         p {
-            display: none;
             padding: 0px 20px;
             position: absolute;
-            bottom: 9%;
-            color: white;
+            bottom: 0%;
+            color: var(--white);
             opacity: 0;
-            transition: 3s ease-in-out;
+            transition-property: opacity, bottom;
+            transition: 0.5s ease-in-out;
 
             span {
                 margin-right: 6px;
@@ -151,20 +148,26 @@ const StyledProjectCard = styled('li')<IStyledProjectCard>`
                 background-color: rgba(186, 186, 186, 0.33);
             }
         }
-    }
 
-    &:hover {
-        div {
+        &:hover {
+
             background-image: 
-                linear-gradient(to bottom, rgba(126, 126, 126, 0.22), rgba(0, 0, 0, 0.63)),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
                 url(${props => props.img});
-        }
 
-        h1, h2, p {
-            display: block;
-            opacity: 1;
+            h1 {
+                bottom: 30%;
+                opacity: 1;
+            }
+            h2 {
+                bottom: 20%;
+                opacity: 1;
+            }
+            p {
+                bottom: 9%;
+                opacity: 1;
+            }   
         }
-
     }
 `
 
@@ -196,7 +199,7 @@ const StyledDrawerBody = styled('div')`
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 12px;
-            background-color: var(--gray-tagbg);
+            background-color: var(--drower-langtagbg);
         }
 
         a {

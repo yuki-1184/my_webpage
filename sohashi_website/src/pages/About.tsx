@@ -125,7 +125,7 @@ const StyledAboutIntro = styled('div')`
 
     p {
       padding: 0px 0px 15px;
-      color: var(--gray-text);
+      color: var(--article-color);
     }
   }
 `
@@ -144,7 +144,7 @@ const StyledTimeLineExperience = styled('div')`
   ul {
     margin: 10px 10px;
     list-style-type: none;
-    border-left: 2px solid var(--dark-grayblue);
+    border-left: 2px solid var(--border-left);
     padding: 0px 5px;
   }
 `
@@ -163,7 +163,7 @@ const StyledTimelineEducation = styled('div')`
   .outer {
     margin: 10px 10px;
     list-style-type: none;
-    border-left: 2px solid var(--dark-grayblue);
+    border-left: 2px solid var(--border-left);
     padding: 0px 5px;
   }
 
@@ -194,7 +194,7 @@ const StyledContent = styled('div')`
   }
 
   &:hover:before {
-    background-color: var(--dark-grayblue);
+    background-color: var(--border-left);
   }
 
   h3 {
@@ -215,7 +215,7 @@ const StyledCourses = styled('ul')`
     margin: 7px 0px;
     padding-left: 20px;
     font-size: 15px;
-    color: var(--gray-text);
+    color: var(--article-color);
 
     &:before {
       content: '▹';

@@ -50,7 +50,7 @@ const StyledFooterNav = styled('div')`
     }
     .the-arrow.-left > .shaft:before, .the-arrow.-left > .shaft:after {
         width: 0;
-        background-color: var(--dark-slategray);
+        background-color: var(--footer-arrow);
     }
     .the-arrow.-left > .shaft:before {
         transform: rotate(0);
@@ -77,7 +77,7 @@ const StyledFooterNav = styled('div')`
         transform: rotate(-40deg);
     }
     .the-arrow > .shaft {
-        background-color: var(--dark-slategray);
+        background-color: var(--footer-arrow);
         display: block;
         height: 1px;
         position: relative;
@@ -86,7 +86,7 @@ const StyledFooterNav = styled('div')`
         will-change: transform;
     }
     .the-arrow > .shaft:before, .the-arrow > .shaft:after {
-        background-color: var(--dark-slategray);
+        background-color: var(--footer-arrow);
         content: '';
         display: block;
         height: 1px;
@@ -104,7 +104,7 @@ const StyledFooterNav = styled('div')`
     }
     .animated-arrow {
         display: inline-block;
-        color: var(--dark-slategray);
+        color: var(--footer-arrow);
         font-size: 1.25em;
         font-style: italic;
         text-decoration: none;

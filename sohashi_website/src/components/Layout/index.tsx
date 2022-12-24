@@ -1,5 +1,5 @@
 // import { LayoutProps } from '@chakra-ui/react';
-import React, { useState, useContext, createContext } from 'react';
+import React, { useState } from 'react';
 import NavBar from '../NavBar';
 import SideBar from '../SideBanner';
 import { Main, BgText, StyledBody } from './style';

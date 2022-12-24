@@ -57,7 +57,7 @@ const StyledExperienceCard = styled('li')`
   }
 
   &:hover:before {
-    background-color: var(--dark-grayblue);
+    background-color: var(--border-left);
   }
 `
 
@@ -67,14 +67,15 @@ const StyledContent = styled('div')`
   p {
     padding: 5px 0px 5px 0px;
     font-size: 15px;
-    color: var(--gray-text);
+    color: var(--article-color);
 
     span {
       margin-right: 12px;
       padding: 5px 12px;
       border-radius: 20px;
       font-size: 14px;
-      background-color: var(--gray-tagbg);
+      background-color: rgba(186, 186, 186, 0.33);
+      color: var(--white);
 
       @media (max-width: 768px) {
         margin-bottom: 12px;
