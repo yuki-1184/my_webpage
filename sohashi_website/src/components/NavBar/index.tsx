@@ -51,7 +51,7 @@ type NavBarProps = {
 const NavBar = ({ theme, toggleTheme }: NavBarProps ) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [scrolled, setScrolled] = useState('false');
-  const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
+  const [isLargerThan900] = useMediaQuery('(min-width: 900px)');
 
   useEffect(() => {
     const onScroll = () => {
@@ -67,14 +67,11 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps ) => {
 
   return (
     <StyledHeader>
-      <Flex h={16} alignItems={"center"} pl={isLargerThan800? '80px': '20px'} pr={ isLargerThan800? '80px': '20px'}>
+      <Flex h={16} alignItems={"center"} pl={isLargerThan900? '80px': '20px'} pr={ isLargerThan900? '80px': '20px'}>
         <Flex alignItems={"center"} w={'100%'}>
-          <Box>
-            {/* <SkipNavLink>
-              <Text fontSize={'4xl'}><strong>SO.</strong></Text>
-            </SkipNavLink> */}
+          <Box className='navbar-my-name' fontSize={'4xl'} fontWeight={'bold'}>
             <Link href='/' _hover={{ textDecoration: 'none' }}>
-              <Text fontSize={'4xl'}><strong>SO.</strong></Text>
+              SO.
             </Link>
           </Box>
           <Spacer />

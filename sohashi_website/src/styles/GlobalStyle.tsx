@@ -27,7 +27,7 @@ const LightTheme = css`
     --button-border: #008B8B;
     --button-background: #E0FFFF;
     --gray-tagbg: rgba(186, 186, 186, 0.33);
-    --home-welcome: #2F4F4F;
+    --home-welcome: #2a3838;
     --box-shadow: rgba(0, 0, 0, 0.4);
   }
 `
@@ -35,13 +35,13 @@ const DarkTheme = css`
   :root {
     --white: #e6f1ff;
     --black: #171616;
-    --red-warn: #00ff08;
+    --red-warn: #FF0000;
     --light-skyblue: #34ace0;
     --light-yellow: #FFFFE0;
     --aquamarin: #7FFFD4;
     --light-seagreen: #20B2AA;
     /* --light-cyan: #024b4b; */
-    /* --dark-cyan: #7FFFD4; */
+    /* --dark-cyan: rgb(127, 255, 212); */
     --dark-gray: #A9A9A9;
     --light-gray: #bdbdbd;
     --dark-slategray: #7bcbd4;
@@ -56,7 +56,7 @@ const DarkTheme = css`
     --sidebar-mail: #7FFFD4; 
     --button-border: #7FFFD4;
     --button-background: #3d3c3c;
-    --home-welcome: #A9A9A9;
+    --home-welcome: #e9e9e9;
     --box-shadow: rgba(255, 255, 2555, 0.4);
   }
 `

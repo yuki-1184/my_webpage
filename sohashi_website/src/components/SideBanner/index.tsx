@@ -36,9 +36,16 @@ const StyledSideLeft = styled('ul')<StyledSideLeftProps>`
 
     &:hover {
       transform: translateY(-3px);
+      /* ${(props) => props.theme === 'light'
+        ? css `
+          filter: invert(8%) sepia(94%) saturate(7392%) hue-rotate(237deg) brightness(56%) contrast(136%);
+        `
+        : css `
+          filter: invert(86%) sepia(17%) saturate(1000%) hue-rotate(95deg) brightness(105%) contrast(105%);
+        `
+      } */
     }
-
-    ${(props) => props.theme === 'dark'
+    ${(props) => props.theme === 'light'
       ? css `
         filter: invert(1);
       `
@@ -47,7 +54,7 @@ const StyledSideLeft = styled('ul')<StyledSideLeftProps>`
   }
 `
 
-const StyledSideRight = styled.div`
+const StyledSideRight = styled('div')`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,8 +77,8 @@ const StyledSideRight = styled.div`
         color: var(--notbg);
 
         &:hover {
-            transform: translateY(-3px);
-            color: var(--sidebar-mail);
+          transform: translateY(-3px);
+          color: var(--sidebar-mail);
         }
     }
 `

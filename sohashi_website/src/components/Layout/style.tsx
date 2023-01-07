@@ -27,6 +27,11 @@ export const StyledHeader = styled('header')`
     z-index: 3;
     width: 100%;
     color: var(--notbg);
+
+    .navbar-my-name {
+        white-space: nowrap;
+        position: relative;
+    }
     
     @media (max-width: 768px) {
         padding: 20px 0;

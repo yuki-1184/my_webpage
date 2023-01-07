@@ -75,7 +75,7 @@ const StyledContent = styled('div')`
       border-radius: 20px;
       font-size: 14px;
       background-color: rgba(186, 186, 186, 0.33);
-      color: var(--white);
+      color: var(--article-color);
 
       @media (max-width: 768px) {
         margin-bottom: 12px;

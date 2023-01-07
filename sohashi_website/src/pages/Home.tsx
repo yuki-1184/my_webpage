@@ -80,7 +80,7 @@ const StyledHome = styled.section`
             display: inline-block;
 
             &:hover {
-                transform: translateY(-3px);
+                transform: translateY(-10px);
             }
         }
         
@@ -94,6 +94,7 @@ const StyledHome = styled.section`
         font-weight: 500;
         line-height: 1.0;
         color: var(--home-welcome);
+        transition: 0.3s ease-in-out;
     }
     p {
         margin: 20px 20px 10px 3px;
