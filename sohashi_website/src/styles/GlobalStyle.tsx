@@ -117,8 +117,8 @@ type GlobalStyleProps = {
 }
 
 const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
-  ${(props) => props.theme == 'light' && LightTheme }
-  ${(props) => props.theme == 'dark' && DarkTheme }
+  ${(props) => props.theme === 'light' && LightTheme }
+  ${(props) => props.theme === 'dark' && DarkTheme }
 `
 
 export default GlobalStyle;

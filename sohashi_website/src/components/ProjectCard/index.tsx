@@ -152,7 +152,7 @@ const StyledProjectCard = styled('li')<IStyledProjectCard>`
         &:hover {
 
             background-image: 
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.78)),
                 url(${props => props.img});
 
             h1 {

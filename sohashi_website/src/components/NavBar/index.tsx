@@ -50,7 +50,6 @@ type NavBarProps = {
 
 const NavBar = ({ theme, toggleTheme }: NavBarProps ) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // const [theme, setTheme] = useState(false);
   const [scrolled, setScrolled] = useState('false');
   const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
 

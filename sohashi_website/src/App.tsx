@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { SkipNavContent } from "@chakra-ui/skip-nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
@@ -7,7 +7,10 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home"
 import './App.css';
 
+const LOCAL_STORAGE_KEY = "ThemeColor"
+
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>

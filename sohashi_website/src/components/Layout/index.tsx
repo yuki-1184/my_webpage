@@ -1,5 +1,5 @@
 // import { LayoutProps } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from '../NavBar';
 import SideBar from '../SideBanner';
 import { Main, BgText, StyledBody } from './style';
@@ -7,11 +7,7 @@ import { ScoutBar } from 'scoutbar';
 import { actions } from './scoutbar';
 import GlobalStyle from '../../styles/GlobalStyle';
 
-
-// typeof LayoutProps = {
-// //   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
-//   title: string
-// };
+const LOCAL_STORAGE_KEY = "ThemeColor"
 
 type LayoutProps = {
     children?: JSX.Element | JSX.Element[],
@@ -19,17 +15,26 @@ type LayoutProps = {
 }
 
 const Layout = ({children, title}: LayoutProps ) => {
-    const [theme, setTheme ] = useState('light');
+    const [theme, setTheme ] = useState("");
+
+    useEffect(() => {
+      const storedTheme = localStorage.getItem(LOCAL_STORAGE_KEY);
+      if (storedTheme) {
+        setTheme(storedTheme);
+      }
+    }, [])
+
+    useEffect(() => {
+      localStorage.setItem(LOCAL_STORAGE_KEY, theme)
+    }, [theme])
 
     const toggleTheme = () => {
-      if (theme === 'light') {
+      if (theme === 'light' || theme === '') {
         setTheme('dark');
       } else {
         setTheme('light');
       }
     }
-
-    console.log(theme);
 
     return (
       <Main>
