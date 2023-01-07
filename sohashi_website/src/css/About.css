@@ -1,21 +1,21 @@
 .About {
-    padding-top: 100px;
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-bottom: 80px;
-    width: 100%;
+  padding-top: 100px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 80px;
+  width: 100%;
 }
 
 .about-heading {
-    display: inline-block;
+  display: inline-block;
 }
 
 .about-links {
-    display: inline-block;
-    margin-left: 10px;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .about-img {
-    display: inline-block;
-    margin-left: 10px;
+  display: inline-block;
+  margin-left: 10px;
 }

@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect} from "react";
+import React, { ReactNode, useState, useEffect } from "react";
 import {
   Box,
   Flex,
@@ -12,30 +12,30 @@ import {
   Switch,
   FormControl,
   FormLabel,
-  useMediaQuery
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { MoonLogo } from '../../data/Icons';
-import { StyledHeader } from '../Layout/style';
-import styled, { css } from 'styled-components';
-import myResume from '../../data/myResume.pdf'
+import { MoonLogo } from "../../data/Icons";
+import { StyledHeader } from "../Layout/style";
+import styled, { css } from "styled-components";
+import myResume from "../../data/myResume.pdf";
 
 const Links = [
-    { goto: '/', link: "Home" },
-    { goto: '/about', link: "About" }, 
-    { goto: '/projects', link: "Projects" }, 
-    { goto: 'contact', link:  "Contact" }
+  { goto: "/", link: "Home" },
+  { goto: "/about", link: "About" },
+  { goto: "/projects", link: "Projects" },
+  { goto: "contact", link: "Contact" },
 ];
 
-const NavLink = ({ children, goto }: { children: ReactNode, goto: string }) => (
+const NavLink = ({ children, goto }: { children: ReactNode; goto: string }) => (
   <Link
     px={2}
     py={1}
     rounded={"md"}
     _hover={{
       textDecoration: "none",
-      bg: 'rgba(186, 186, 186, 0.33)',
+      bg: "rgba(186, 186, 186, 0.33)",
     }}
     href={goto}
   >
@@ -44,33 +44,38 @@ const NavLink = ({ children, goto }: { children: ReactNode, goto: string }) => (
 );
 
 type NavBarProps = {
-  theme: string,
-  toggleTheme: () => void,
-}
+  theme: string;
+  toggleTheme: () => void;
+};
 
-const NavBar = ({ theme, toggleTheme }: NavBarProps ) => {
+const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [scrolled, setScrolled] = useState('false');
-  const [isLargerThan900] = useMediaQuery('(min-width: 900px)');
+  const [scrolled, setScrolled] = useState("false");
+  const [isLargerThan900] = useMediaQuery("(min-width: 900px)");
 
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled('true')
+        setScrolled("true");
       } else {
-        setScrolled('false')
+        setScrolled("false");
       }
-    }
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <StyledHeader>
-      <Flex h={16} alignItems={"center"} pl={isLargerThan900? '80px': '20px'} pr={ isLargerThan900? '80px': '20px'}>
-        <Flex alignItems={"center"} w={'100%'}>
-          <Box className='navbar-my-name' fontSize={'4xl'} fontWeight={'bold'}>
-            <Link href='/' _hover={{ textDecoration: 'none' }}>
+      <Flex
+        h={16}
+        alignItems={"center"}
+        pl={isLargerThan900 ? "80px" : "20px"}
+        pr={isLargerThan900 ? "80px" : "20px"}
+      >
+        <Flex alignItems={"center"} w={"100%"}>
+          <Box className="navbar-my-name" fontSize={"4xl"} fontWeight={"bold"}>
+            <Link href="/" _hover={{ textDecoration: "none" }}>
               SO.
             </Link>
           </Box>
@@ -80,23 +85,25 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps ) => {
               as={"nav"}
               spacing={5}
               display={{ base: "none", md: "flex" }}
-              >
-              {Links.map(({goto, link} ) => (
-                  <NavLink goto={goto} key={link}>{link}</NavLink>
+            >
+              {Links.map(({ goto, link }) => (
+                <NavLink goto={goto} key={link}>
+                  {link}
+                </NavLink>
               ))}
               <StyledResume>
-                <a href={myResume} target='_blank' rel="noopener noreferrer">
+                <a href={myResume} target="_blank" rel="noopener noreferrer">
                   Resume
                 </a>
               </StyledResume>
-              <Box p={['5px', '10px']}>
+              <Box p={["5px", "10px"]}>
                 <button onClick={() => toggleTheme()}>
                   <StyledLogo theme={theme}>
-                    {MoonLogo('24px', '24px')}
+                    {MoonLogo("24px", "24px")}
                   </StyledLogo>
                 </button>
               </Box>
-            </HStack> 
+            </HStack>
           </Box>
           <IconButton
             size={"md"}
@@ -104,34 +111,48 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps ) => {
             aria-label={"Open Menu"}
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
-            variant='outline'
+            variant="outline"
           />
         </Flex>
       </Flex>
 
       {isOpen ? (
         <Box pb={4} display={{ md: "none" }}>
-          <Stack as={"nav"} spacing={4} alignItems='center' justifyContent={'center'}>
-            {Links.map(({goto, link}) => (
-              <NavLink goto={goto} key={link}>{link}</NavLink>
+          <Stack
+            as={"nav"}
+            spacing={4}
+            alignItems="center"
+            justifyContent={"center"}
+          >
+            {Links.map(({ goto, link }) => (
+              <NavLink goto={goto} key={link}>
+                {link}
+              </NavLink>
             ))}
             <StyledResume>
-              <a href={myResume} target='_blank' rel="noopener noreferrer">
+              <a href={myResume} target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
             </StyledResume>
           </Stack>
 
-          <FormControl display='flex' alignItems='center' justifyContent={'center'} mt={'25px'}>
-            <FormLabel htmlFor='dark-theme'>
+          <FormControl
+            display="flex"
+            alignItems="center"
+            justifyContent={"center"}
+            mt={"25px"}
+          >
+            <FormLabel htmlFor="dark-theme">
               <HStack>
                 <StyledLogo theme={theme}>
-                  {MoonLogo('22px', '22px')}
+                  {MoonLogo("22px", "22px")}
                 </StyledLogo>
-                <Text>
-                  Dark Theme
-                </Text>
-                <Switch id='dark-theme' defaultChecked={theme === 'dark' ? true : false} onChange={() => toggleTheme()} />
+                <Text>Dark Theme</Text>
+                <Switch
+                  id="dark-theme"
+                  defaultChecked={theme === "dark" ? true : false}
+                  onChange={() => toggleTheme()}
+                />
               </HStack>
             </FormLabel>
           </FormControl>
@@ -139,9 +160,9 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps ) => {
       ) : null}
     </StyledHeader>
   );
-}
+};
 
-const StyledResume = styled('div')`
+const StyledResume = styled("div")`
   a {
     padding: 9px 16px;
     border: solid var(--button-border);
@@ -156,21 +177,21 @@ const StyledResume = styled('div')`
       background: var(--button-background);
     }
   }
-`
+`;
 
 type StyledLogoProps = {
-  theme: string
-}
+  theme: string;
+};
 
-const StyledLogo = styled('div')<StyledLogoProps>`
+const StyledLogo = styled("div")<StyledLogoProps>`
   transition: 1s ease-in-out;
 
-  ${(props) => props.theme === 'dark'
-    ? css `
-      filter: invert(1)
-    `
-    : null
-  }
-`
+  ${(props) =>
+    props.theme === "dark"
+      ? css`
+          filter: invert(1);
+        `
+      : null}
+`;
 
 export default NavBar;

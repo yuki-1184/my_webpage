@@ -1,16 +1,16 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 75px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
 }
 
 body {
-    overflow-x: hidden;
-    position: relative;
-    background-color: var(--bg) !important;
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--bg) !important;
 }

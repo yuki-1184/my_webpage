@@ -1,83 +1,90 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
-import Layout from '../components/Layout';
-import FooterNav from '../components/FooterNav';
-import { ReactComponent as Checkmark } from '../Images/checkmarkLogo.svg'
+import Layout from "../components/Layout";
+import FooterNav from "../components/FooterNav";
+import { ReactComponent as Checkmark } from "../Images/checkmarkLogo.svg";
 
 const Contact = () => {
-  const [submitted, setSubmitted] = useState('initial')
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [submitted, setSubmitted] = useState("initial");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    console.log('handleSubmit')
-    
-    if (submitted === 'success') {
-      setSubmitted('initial')
-    }
-    else {
+    console.log("handleSubmit");
+
+    if (submitted === "success") {
+      setSubmitted("initial");
+    } else {
       const data = new FormData(event.target as HTMLFormElement);
       fetch("https://formspree.io/f/mayzwepg", {
-        method: 'POST',
+        method: "POST",
         body: data,
         headers: {
-            'Accept': 'application/json'
-      }}).then(response => {
+          Accept: "application/json",
+        },
+      }).then((response) => {
         if (response.ok) {
-          setSubmitted('success')
-          setName('')
-          setEmail('')
-          setMessage('')
+          setSubmitted("success");
+          setName("");
+          setEmail("");
+          setMessage("");
         } else {
-          setSubmitted('error')
+          setSubmitted("error");
         }
-      })
+      });
     }
-  }
+  };
 
   return (
-    <Layout title='Contact'>
+    <Layout title="Contact">
       <StyledContact>
         <h1>Contact</h1>
-        <h2>{submitted === 'error' ? 'Something went wrong, please resend the message.' : null}</h2>
+        <h2>
+          {submitted === "error"
+            ? "Something went wrong, please resend the message."
+            : null}
+        </h2>
         <form onSubmit={handleSubmit} method="POST">
           <StyledFormItem>
-            <input 
-              type='text' 
-              placeholder='*Name' 
-              name="name" 
+            <input
+              type="text"
+              placeholder="*Name"
+              name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
           </StyledFormItem>
           <StyledFormItem>
-            <input 
-              type='email' 
-              placeholder='*Email' 
-              name="email" 
+            <input
+              type="email"
+              placeholder="*Email"
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </StyledFormItem>
           <StyledFormItem>
-            <textarea 
-              placeholder='*Message' 
-              name="message" 
-              value={message} 
+            <textarea
+              placeholder="*Message"
+              name="message"
+              value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
             />
           </StyledFormItem>
           <StyledFormItem>
             <StyledButton>
-              <button type='submit' className={submitted === 'success' ? 'active' : ''}>
-                <p>{submitted === 'success' ? 'Thanks' : 'Send'}</p>
-                <div className='checked'>
+              <button
+                type="submit"
+                className={submitted === "success" ? "active" : ""}
+              >
+                <p>{submitted === "success" ? "Thanks" : "Send"}</p>
+                <div className="checked">
                   <Checkmark />
                 </div>
               </button>
@@ -85,14 +92,14 @@ const Contact = () => {
           </StyledFormItem>
         </form>
         <div>
-          <FooterNav goto='/'>Go Back Home</FooterNav>
+          <FooterNav goto="/">Go Back Home</FooterNav>
         </div>
       </StyledContact>
     </Layout>
-  )
-}
+  );
+};
 
-const StyledContact = styled('section')`
+const StyledContact = styled("section")`
   margin: 20px auto;
   min-height: 70vh;
   text-align: left;
@@ -100,17 +107,17 @@ const StyledContact = styled('section')`
   max-width: 1000px;
 
   @media (max-width: 1250px) {
-      margin: 20px 150px;
+    margin: 20px 150px;
   }
 
   @media (max-width: 768px) {
-      margin: 20px 20px;
+    margin: 20px 20px;
   }
 
   h1 {
     margin: 0px 10px;
     font-size: clamp(40px, 8vw, 80px);
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-weight: 500;
     color: var(--notbg);
   }
@@ -123,9 +130,9 @@ const StyledContact = styled('section')`
   link {
     margin: 10px 0px;
   }
-`
+`;
 
-const StyledFormItem = styled('div')`
+const StyledFormItem = styled("div")`
   margin: 10px 10px;
   color: var(--notbg);
 
@@ -157,9 +164,9 @@ const StyledFormItem = styled('div')`
       width: 100%;
     }
   }
-`
+`;
 
-const StyledButton = styled('div')`
+const StyledButton = styled("div")`
   button {
     position: relative;
     margin: 20px 0px;
@@ -182,7 +189,7 @@ const StyledButton = styled('div')`
     border-radius: 40px;
     box-shadow: 0 0 12px -2px var(--box-shadow);
     position: absolute;
-    top:0;
+    top: 0;
     right: -40px;
     opacity: 0;
     background: var(--light-seagreen);
@@ -192,7 +199,7 @@ const StyledButton = styled('div')`
     width: 40px;
     margin: 5px;
   }
-  
+
   .checked path {
     stroke-width: 3;
     stroke: #fff;
@@ -223,6 +230,6 @@ const StyledButton = styled('div')`
     transition-delay: 1s;
     stroke-dashoffset: 0;
   }
-`
+`;
 
 export default Contact;

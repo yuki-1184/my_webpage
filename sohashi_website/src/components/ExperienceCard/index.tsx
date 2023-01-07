@@ -1,51 +1,56 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 type ExperienceCardProps = {
-    title: string;
-    type: string;
-    date: string;
-    location: string;
-    description: string;
-    url: string;
-    technologies: string[];
-}
+  title: string;
+  type: string;
+  date: string;
+  location: string;
+  description: string;
+  url: string;
+  technologies: string[];
+};
 
 const ExperienceCard = (props: ExperienceCardProps) => {
-    return (
-      <StyledExperienceCard>
-        <StyledContent>
-          <StyledTitle>
-            <h3><strong>{props.type}</strong></h3>
-            <span>
-              <strong>
-                @<a href={props.url} target='_blank' rel="noopener noreferrer">{props.title}</a>
-              </strong>
-            </span> 
-          </StyledTitle>
-          <h3>{props.date}</h3>
-          <p>{props.description}</p>
-          <p>
-            {props.technologies.map((tech, index) => (
-                <span key={index}>{tech}</span>
-            ))}
-          </p>
-        </StyledContent>
-      </StyledExperienceCard>
-    )
-}
+  return (
+    <StyledExperienceCard>
+      <StyledContent>
+        <StyledTitle>
+          <h3>
+            <strong>{props.type}</strong>
+          </h3>
+          <span>
+            <strong>
+              @
+              <a href={props.url} target="_blank" rel="noopener noreferrer">
+                {props.title}
+              </a>
+            </strong>
+          </span>
+        </StyledTitle>
+        <h3>{props.date}</h3>
+        <p>{props.description}</p>
+        <p>
+          {props.technologies.map((tech, index) => (
+            <span key={index}>{tech}</span>
+          ))}
+        </p>
+      </StyledContent>
+    </StyledExperienceCard>
+  );
+};
 
-const StyledExperienceCard = styled('li')`
+const StyledExperienceCard = styled("li")`
   padding-right: 20px;
   padding-left: 20px;
   padding-top: 10px;
   margin-bottom: 30px;
   position: relative;
-  transition: .5s;
+  transition: 0.5s;
 
   &:before {
     position: absolute;
-    content: '';
+    content: "";
     width: 15px;
     height: 15px;
     border-radius: 999px;
@@ -53,15 +58,15 @@ const StyledExperienceCard = styled('li')`
     background: var(--bg);
     left: -13px;
     top: 16px;
-    transition: .5s;
+    transition: 0.5s;
   }
 
   &:hover:before {
     background-color: var(--border-left);
   }
-`
+`;
 
-const StyledContent = styled('div')`
+const StyledContent = styled("div")`
   color: var(--notbg);
 
   p {
@@ -83,9 +88,9 @@ const StyledContent = styled('div')`
       }
     }
   }
-`
+`;
 
-const StyledTitle = styled('div')`
+const StyledTitle = styled("div")`
   display: flex;
   color: var(--notbg);
 
@@ -94,11 +99,11 @@ const StyledTitle = styled('div')`
 
     a {
       margin: 0px 2px;
-        
+
       &:hover {
         text-decoration: underline;
-      }  
-    } 
+      }
+    }
   }
 
   @media (max-width: 768px) {
@@ -108,6 +113,6 @@ const StyledTitle = styled('div')`
       margin: 0;
     }
   }
-`
+`;
 
 export default ExperienceCard;

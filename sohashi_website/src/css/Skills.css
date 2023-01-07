@@ -1,24 +1,24 @@
 .Skills-Container {
-    padding-top: 50px;
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-bottom: 80px;
+  padding-top: 50px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 80px;
 }
 
 .skills-lang {
-    display: flex;
-    margin-left: 15px;
-    margin-bottom: 15px;
+  display: flex;
+  margin-left: 15px;
+  margin-bottom: 15px;
 }
 
 .skills-fw {
-    display: flex;
-    margin-left: 15px;
-    margin-bottom: 15px;
-    margin-top: 15px;
+  display: flex;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .skills-card {
-    float: left;
-    padding-left: 10px;
+  float: left;
+  padding-left: 10px;
 }
