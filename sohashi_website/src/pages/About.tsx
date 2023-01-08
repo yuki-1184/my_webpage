@@ -121,6 +121,7 @@ const StyledAboutSection = styled("section")`
     font-family: "Playfair Display", serif;
     font-weight: 500;
     color: var(--notbg);
+    transition: 0.3s ease-in-out;
   }
 `;
 

@@ -23,6 +23,7 @@ const LightTheme = css`
     --footer-arrow: #2f4f4f;
     --lang-tagbg: rgba(186, 186, 186, 0.33);
     --drower-langtagbg: #bababaaa;
+    --navbar-page: #7fffd4;
     --sidebar-mail: #008b8b;
     --button-border: #008b8b;
     --button-background: #e0ffff;
@@ -53,6 +54,7 @@ const DarkTheme = css`
     --footer-arrow: #7bcbd4;
     --lang-tagbg: rgba(186, 186, 186, 0.33);
     --drower-langtagbg: #bababaaa;
+    --navbar-page: #7fffd4;
     --sidebar-mail: #7fffd4;
     --button-border: #7fffd4;
     --button-background: #3d3c3c;

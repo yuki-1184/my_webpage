@@ -48,7 +48,7 @@ function Home() {
 }
 
 const StyledHome = styled.section`
-  margin: 60px auto;
+  margin: 40px auto;
   min-height: 70vh;
   text-align: left;
   padding: 0;

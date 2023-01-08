@@ -135,8 +135,8 @@ export const Side = styled("div")`
   position: fixed;
   z-index: 1;
   bottom: 0;
-  left: ${(props) => (props.title === "left" ? "80px" : "auto")};
-  right: ${(props) => (props.title === "left" ? "auto" : "80px")};
+  left: ${(props) => (props.title === "left" ? "60px" : "auto")};
+  right: ${(props) => (props.title === "left" ? "auto" : "60px")};
 
   @media (max-width: 1280px) {
     left: ${(props) => (props.title === "left" ? "20px" : "auto")};

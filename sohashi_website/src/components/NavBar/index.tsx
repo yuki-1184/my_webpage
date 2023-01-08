@@ -28,19 +28,29 @@ const Links = [
   { goto: "contact", link: "Contact" },
 ];
 
-const NavLink = ({ children, goto }: { children: ReactNode; goto: string }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: "rgba(186, 186, 186, 0.33)",
-    }}
-    href={goto}
-  >
-    {children}
-  </Link>
+// const LOCAL_STORAGE_KEY1 = "CurrentPage"
+
+type NavLinkProps = {
+  children: JSX.Element; 
+  goto: string;
+  link: string;
+  setPage: (page: string) => void;
+}
+
+const NavLink = ({ children, goto, link, setPage}: NavLinkProps) => (
+    <Link
+      px={2}
+      py={1}
+      rounded={"md"}
+      _hover={{
+        textDecoration: "none",
+        bg: "rgba(186, 186, 186, 0.33)",
+      }}
+      onClick={() => setPage(link)}
+      href={goto}
+    >
+      {children}
+    </Link>
 );
 
 type NavBarProps = {
@@ -50,20 +60,32 @@ type NavBarProps = {
 
 const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [scrolled, setScrolled] = useState("false");
+  // const [scrolled, setScrolled] = useState("false");
   const [isLargerThan900] = useMediaQuery("(min-width: 900px)");
+  const [ page, setPage ] = useState("");
 
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled("true");
-      } else {
-        setScrolled("false");
-      }
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // useEffect(() => {
+  //   const onScroll = () => {
+  //     if (window.scrollY > 50) {
+  //       setScrolled("true");
+  //     } else {
+  //       setScrolled("false");
+  //     }
+  //   };
+  //   window.addEventListener("scroll", onScroll);
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
+
+  // useEffect(() => {
+  //   const storedPage = localStorage.getItem(LOCAL_STORAGE_KEY1);
+  //   if (storedPage) {
+  //     setPage(storedPage);
+  //   }
+  // })
+
+  // useEffect(() => {
+  //   localStorage.setItem(LOCAL_STORAGE_KEY1, page)
+  // }, [page])
 
   return (
     <StyledHeader>
@@ -87,8 +109,15 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map(({ goto, link }) => (
-                <NavLink goto={goto} key={link}>
-                  {link}
+                <NavLink 
+                  key={link} 
+                  goto={goto} 
+                  link={link}
+                  setPage={setPage}
+                >
+                  <StyledNavLink className={link === page ? "navlink-selected" : "navlink-normal"}>
+                    {link}
+                  </StyledNavLink>
                 </NavLink>
               ))}
               <StyledResume>
@@ -125,8 +154,15 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
             justifyContent={"center"}
           >
             {Links.map(({ goto, link }) => (
-              <NavLink goto={goto} key={link}>
-                {link}
+              <NavLink 
+                key={link} 
+                goto={goto} 
+                link={link}
+                setPage={setPage}
+              >
+                <StyledNavLink className={link === page ? "navlink-selected" : "navlink-normal"}>
+                  {link}
+                </StyledNavLink>
               </NavLink>
             ))}
             <StyledResume>
@@ -161,6 +197,21 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
     </StyledHeader>
   );
 };
+
+type StyledNavLinkProps = {
+  className: string;
+}
+
+const StyledNavLink = styled("div")<StyledNavLinkProps>`
+  /* ${(props) => props.className === "navlink-selected"
+    ? css `
+      color: var(--navbar-page)
+    `
+    : css `
+      color: var(--notbg)
+    `
+  } */
+`
 
 const StyledResume = styled("div")`
   a {
