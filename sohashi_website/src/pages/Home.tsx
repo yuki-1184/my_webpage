@@ -48,7 +48,10 @@ function Home() {
 }
 
 const StyledHome = styled.section`
-  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
   min-height: 70vh;
   text-align: left;
   padding: 0;

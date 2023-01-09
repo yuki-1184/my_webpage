@@ -136,7 +136,11 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
           </Box>
           <IconButton
             size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            icon={isOpen 
+              ? <CloseIcon color={theme === "light" ? 'gray.700': 'gray.200'} /> 
+              : <HamburgerIcon color={theme === "light" ? 'gray.700': 'gray.200'} />
+            }
+            borderColor={theme === "light" ? 'gray.300': 'gray.700'}
             aria-label={"Open Menu"}
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
