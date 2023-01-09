@@ -147,6 +147,11 @@ const StyledFormItem = styled("div")`
     border-radius: 15px;
     background-color: transparent;
 
+    ::placeholder {
+      color: var(--placeholder-color);
+      opacity: 0.4;
+    }
+
     @media (max-width: 450px) {
       width: 100%;
     }
@@ -160,6 +165,11 @@ const StyledFormItem = styled("div")`
     border: 1px solid var(--notbg);
     border-radius: 15px;
     background-color: transparent;
+
+    ::placeholder {
+      color: var(--placeholeder-color);
+      opacity: 0.3;
+    }
 
     @media (max-width: 450px) {
       width: 100%;

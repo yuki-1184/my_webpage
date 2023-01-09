@@ -27,6 +27,7 @@ const LightTheme = css`
     --sidebar-mail: #008b8b;
     --button-border: #008b8b;
     --button-background: #e0ffff;
+    --placeholder-color: #232323;
     --gray-tagbg: rgba(186, 186, 186, 0.33);
     --home-welcome: #2a3838;
     --box-shadow: rgba(0, 0, 0, 0.4);
@@ -58,6 +59,8 @@ const DarkTheme = css`
     --sidebar-mail: #7fffd4;
     --button-border: #7fffd4;
     --button-background: #3d3c3c;
+    --placeholder-color: #A9A9A9;
+    --gray-tagbg: rgba(186, 186, 186, 0.33);
     --home-welcome: #e9e9e9;
     --box-shadow: rgba(255, 255, 2555, 0.4);
   }
