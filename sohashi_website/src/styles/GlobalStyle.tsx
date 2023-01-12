@@ -31,6 +31,7 @@ const LightTheme = css`
     --gray-tagbg: rgba(186, 186, 186, 0.33);
     --home-welcome: #2a3838;
     --box-shadow: rgba(0, 0, 0, 0.4);
+    --drawer-bgcolor: #ffffe9;
   }
 `;
 const DarkTheme = css`
@@ -63,6 +64,7 @@ const DarkTheme = css`
     --gray-tagbg: rgba(186, 186, 186, 0.33);
     --home-welcome: #e9e9e9;
     --box-shadow: rgba(255, 255, 2555, 0.4);
+    --drawer-bgcolor: #1A202C;
   }
 `;
 

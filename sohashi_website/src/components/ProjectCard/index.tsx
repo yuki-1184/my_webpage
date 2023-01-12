@@ -41,16 +41,17 @@ const ProjectCard = (props: ProjectCardProps) => {
       </div>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"md"}>
         <DrawerOverlay />
-        <DrawerContent bgColor={"#FFFFE0"}>
+        <DrawerContent 
+        // bgColor={"#FFFFE0"}
+        >
           <DrawerCloseButton />
-          <DrawerHeader
-            borderBottomWidth={"1px"}
-            borderBottomColor={"rbg(0, 0, 0)"}
-          >
-            {props.title}
+          <DrawerHeader padding={"0px"}>
+            <StyledDrawerHeader>
+              {props.title}
+            </StyledDrawerHeader>
           </DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody padding={"0px"}>
             <StyledDrawerBody>
               <h1>
                 {props.title} ({props.date})
@@ -191,8 +192,19 @@ const StyledProjectCard = styled("li")<IStyledProjectCard>`
   }
 `;
 
+const StyledDrawerHeader = styled("div")`
+  padding: 16px 24px;
+  color: var(--notbg);
+  background-color: var(--drawer-bgcolor);
+  border-bottom: 1px solid var(--notbg);
+`
+
 const StyledDrawerBody = styled("div")`
   margin: 0;
+  padding: 8px 24px;
+  color: var(--notbg);
+  background-color: var(--drawer-bgcolor);
+  min-height: 100%;
 
   h1 {
     font-size: 22px;
@@ -206,7 +218,7 @@ const StyledDrawerBody = styled("div")`
   }
 
   h2 {
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 18px;
     font-weight: 600;
   }
