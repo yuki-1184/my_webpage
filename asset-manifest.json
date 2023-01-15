@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.8de74b4d.css",
-    "main.js": "/static/js/main.d3e42811.js",
-    "static/media/upcoming.png": "/static/media/upcoming.ad74a9b5a26b244e8355.png",
-    "static/media/my_portfolio.png": "/static/media/my_portfolio.bd068a5937adb6fff485.png",
-    "static/media/yumemi_frontend_portfolio.png": "/static/media/yumemi_frontend_portfolio.5790baf6ec0df00afb32.png",
-    "static/media/myResume.pdf": "/static/media/myResume.f779ad005cbe2fd766b8.pdf",
-    "static/media/navGithub.svg": "/static/media/navGithub.dd0585f7fe182a06fad8ac101354caa4.svg",
-    "static/media/navInsta.svg": "/static/media/navInsta.10854578932c4bf0c258ad274be555aa.svg",
-    "static/media/navLinkedIn.svg": "/static/media/navLinkedIn.591e8280ec2c402f5015ccedb69ca182.svg",
-    "index.html": "/index.html",
-    "static/media/navFacebook.svg": "/static/media/navFacebook.79f4286480746b56f5650ee8bf88f5fa.svg",
-    "static/media/MoonLogo.svg": "/static/media/MoonLogo.852b04d8e89def056fb3cd8de97f4a0b.svg",
-    "static/media/checkmarkLogo.svg": "/static/media/checkmarkLogo.d95d4c23f40321506fd775f62df06afe.svg",
-    "main.8de74b4d.css.map": "/static/css/main.8de74b4d.css.map",
-    "main.d3e42811.js.map": "/static/js/main.d3e42811.js.map"
+    "main.css": "/my_webpage/static/css/main.8de74b4d.css",
+    "main.js": "/my_webpage/static/js/main.cb6515a6.js",
+    "static/media/upcoming.png": "/my_webpage/static/media/upcoming.ad74a9b5a26b244e8355.png",
+    "static/media/my_portfolio.png": "/my_webpage/static/media/my_portfolio.bd068a5937adb6fff485.png",
+    "static/media/yumemi_frontend_portfolio.png": "/my_webpage/static/media/yumemi_frontend_portfolio.5790baf6ec0df00afb32.png",
+    "static/media/myResume.pdf": "/my_webpage/static/media/myResume.f779ad005cbe2fd766b8.pdf",
+    "static/media/navGithub.svg": "/my_webpage/static/media/navGithub.dd0585f7fe182a06fad8ac101354caa4.svg",
+    "static/media/navInsta.svg": "/my_webpage/static/media/navInsta.10854578932c4bf0c258ad274be555aa.svg",
+    "static/media/navLinkedIn.svg": "/my_webpage/static/media/navLinkedIn.591e8280ec2c402f5015ccedb69ca182.svg",
+    "index.html": "/my_webpage/index.html",
+    "static/media/navFacebook.svg": "/my_webpage/static/media/navFacebook.79f4286480746b56f5650ee8bf88f5fa.svg",
+    "static/media/MoonLogo.svg": "/my_webpage/static/media/MoonLogo.852b04d8e89def056fb3cd8de97f4a0b.svg",
+    "static/media/checkmarkLogo.svg": "/my_webpage/static/media/checkmarkLogo.d95d4c23f40321506fd775f62df06afe.svg",
+    "main.8de74b4d.css.map": "/my_webpage/static/css/main.8de74b4d.css.map",
+    "main.cb6515a6.js.map": "/my_webpage/static/js/main.cb6515a6.js.map"
   },
   "entrypoints": [
     "static/css/main.8de74b4d.css",
-    "static/js/main.d3e42811.js"
+    "static/js/main.cb6515a6.js"
   ]
 }
