@@ -1,6 +1,7 @@
 {
   "name": "sohashi_website",
   "version": "0.1.0",
+  "homepage": "https://yuki-1184.github.io/my_webpage/",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.11",
@@ -29,6 +30,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -61,6 +64,7 @@
     "@typescript-eslint/parser": "^5.45.1",
     "eslint": "^8.29.0",
     "eslint-plugin-react": "^7.31.11",
+    "gh-pages": "^4.0.0",
     "prettier": "2.8.1"
   }
 }
