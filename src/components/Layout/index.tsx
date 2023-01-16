@@ -15,7 +15,7 @@ type LayoutProps = {
 };
 
 const Layout = ({ children, title }: LayoutProps) => {
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     const storedTheme = localStorage.getItem(LOCAL_STORAGE_KEY);
