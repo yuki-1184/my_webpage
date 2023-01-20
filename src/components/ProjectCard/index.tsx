@@ -133,6 +133,7 @@ const StyledProjectCard = styled("li")<IStyledProjectCard>`
 
     h1 {
       position: absolute;
+      padding: 0px 10px;
       bottom: 21%;
       color: var(--white);
       font-size: 26px;
