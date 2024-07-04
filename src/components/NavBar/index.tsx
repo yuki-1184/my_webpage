@@ -19,7 +19,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { MoonLogo } from "../../data/Icons";
 import { StyledHeader } from "../Layout/style";
 import styled, { css } from "styled-components";
-import myResume from "../../data/myResume.pdf";
+import myResume from '../../data/myResume.pdf'
 
 const Links = [
   { goto: "/", link: "Home" },
@@ -27,8 +27,6 @@ const Links = [
   { goto: "/projects", link: "Projects" },
   { goto: "contact", link: "Contact" },
 ];
-
-// const LOCAL_STORAGE_KEY1 = "CurrentPage"
 
 type NavLinkProps = {
   children: JSX.Element; 
@@ -63,29 +61,6 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
   // const [scrolled, setScrolled] = useState("false");
   const [isLargerThan900] = useMediaQuery("(min-width: 900px)");
   const [ page, setPage ] = useState("");
-
-  // useEffect(() => {
-  //   const onScroll = () => {
-  //     if (window.scrollY > 50) {
-  //       setScrolled("true");
-  //     } else {
-  //       setScrolled("false");
-  //     }
-  //   };
-  //   window.addEventListener("scroll", onScroll);
-  //   return () => window.removeEventListener("scroll", onScroll);
-  // }, []);
-
-  // useEffect(() => {
-  //   const storedPage = localStorage.getItem(LOCAL_STORAGE_KEY1);
-  //   if (storedPage) {
-  //     setPage(storedPage);
-  //   }
-  // })
-
-  // useEffect(() => {
-  //   localStorage.setItem(LOCAL_STORAGE_KEY1, page)
-  // }, [page])
 
   return (
     <StyledHeader>

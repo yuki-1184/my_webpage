@@ -5,41 +5,7 @@ import ExperienceCard from "../components/ExperienceCard";
 
 import styled from "styled-components";
 import Layout from "../components/Layout";
-
-const education = {
-  degree: "BS in Computer Engineering, University of California Santa Cruz",
-  date: "Expected in Dec 2023",
-  clubs: "Member of Japanese Student Association",
-  courses: [
-    "Computer System Design",
-    "Algorithms and Abstract Data Types",
-    "Computer Architecture",
-    "Applied Machine Learning",
-  ],
-};
-
-const experiences = [
-  {
-    title: "e-Seikatsu",
-    type: "Software Engineer Intern",
-    date: "Aug 2022 - Sep 2022",
-    location: "Tokyo, Japan",
-    description:
-      "Used modern web technologies to build a website that looks up for rentals. Implemented heat map searching feature using map API with a team mate.",
-    url: "https://www.e-seikatsu.info/en/",
-    technologies: ["TypeScrips", "Vue", "GitHub"],
-  },
-  {
-    title: "NIFTY",
-    type: "Software Engineer Intern",
-    date: "Aug 2022",
-    location: "Tokyo, Japan",
-    description:
-      "Worked as a scrum master to define project scope and solve technical problem. Corrected errors and added new features in a sample web application to improve usability.",
-    url: "https://www.nifty.com/",
-    technologies: ["Python", "Flask", "Docker", "AWS Code Commit"],
-  },
-];
+import { EDUCATION, EXPERIENCES } from "../constants/about";
 
 export default function About() {
   return (
@@ -76,11 +42,11 @@ export default function About() {
           <div className="outer">
             <StyledContent>
               <h3>
-                <strong>{education.degree}</strong>
+                <strong>{EDUCATION.degree}</strong>
               </h3>
-              <h4>({education.date})</h4>
+              <h4>({EDUCATION.date})</h4>
               <StyledCourses>
-                {education.courses.map((course, index) => (
+                {EDUCATION.courses.map((course, index) => (
                   <li key={index}>{course}</li>
                 ))}
               </StyledCourses>
@@ -90,7 +56,7 @@ export default function About() {
         <StyledTimeLineExperience>
           <h2>Experiences</h2>
           <ul>
-            {experiences.map((props, index) => (
+            {EXPERIENCES.map((props, index) => (
               <ExperienceCard key={index} {...props}></ExperienceCard>
             ))}
           </ul>
