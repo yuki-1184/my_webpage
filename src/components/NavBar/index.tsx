@@ -19,7 +19,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { MoonLogo } from "../../data/Icons";
 import { StyledHeader } from "../Layout/style";
 import styled, { css } from "styled-components";
-import myResume from '../../data/myResume.pdf'
+import myResume from '../../data/Resume_v3.1.2.pdf'
 
 const Links = [
   { goto: "/", link: "Home" },
@@ -96,7 +96,7 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
                 </NavLink>
               ))}
               <StyledResume>
-                <a href={myResume} target="_blank" rel="noopener noreferrer">
+                <a href={myResume} type="application/pdf" target="_blank" rel="noopener noreferrer">
                   Resume
                 </a>
               </StyledResume>
@@ -145,7 +145,7 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
               </NavLink>
             ))}
             <StyledResume>
-              <a href={myResume} target="_blank" rel="noopener noreferrer">
+              <a href={myResume} type="application/pdf" target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
             </StyledResume>
