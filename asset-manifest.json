@@ -1,11 +1,13 @@
 {
   "files": {
     "main.css": "/my_webpage/static/css/main.8de74b4d.css",
-    "main.js": "/my_webpage/static/js/main.cb6515a6.js",
+    "main.js": "/my_webpage/static/js/main.1f337240.js",
     "static/media/upcoming.png": "/my_webpage/static/media/upcoming.ad74a9b5a26b244e8355.png",
     "static/media/my_portfolio.png": "/my_webpage/static/media/my_portfolio.bd068a5937adb6fff485.png",
     "static/media/yumemi_frontend_portfolio.png": "/my_webpage/static/media/yumemi_frontend_portfolio.5790baf6ec0df00afb32.png",
-    "static/media/myResume.pdf": "/my_webpage/static/media/myResume.f779ad005cbe2fd766b8.pdf",
+    "static/media/Resume_v3.1.2.pdf": "/my_webpage/static/media/Resume_v3.1.2.b006f0e4a32c61d622bc.pdf",
+    "static/media/genPlate.png": "/my_webpage/static/media/genPlate.dda582e31eebdea4c545.png",
+    "static/media/upcoming-sxc.jpeg": "/my_webpage/static/media/upcoming-sxc.745b43bf35b7ea3a4aa8.jpeg",
     "static/media/navGithub.svg": "/my_webpage/static/media/navGithub.dd0585f7fe182a06fad8ac101354caa4.svg",
     "static/media/navInsta.svg": "/my_webpage/static/media/navInsta.10854578932c4bf0c258ad274be555aa.svg",
     "static/media/navLinkedIn.svg": "/my_webpage/static/media/navLinkedIn.591e8280ec2c402f5015ccedb69ca182.svg",
@@ -14,10 +16,10 @@
     "static/media/MoonLogo.svg": "/my_webpage/static/media/MoonLogo.852b04d8e89def056fb3cd8de97f4a0b.svg",
     "static/media/checkmarkLogo.svg": "/my_webpage/static/media/checkmarkLogo.d95d4c23f40321506fd775f62df06afe.svg",
     "main.8de74b4d.css.map": "/my_webpage/static/css/main.8de74b4d.css.map",
-    "main.cb6515a6.js.map": "/my_webpage/static/js/main.cb6515a6.js.map"
+    "main.1f337240.js.map": "/my_webpage/static/js/main.1f337240.js.map"
   },
   "entrypoints": [
     "static/css/main.8de74b4d.css",
-    "static/js/main.cb6515a6.js"
+    "static/js/main.1f337240.js"
   ]
 }
