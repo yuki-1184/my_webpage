@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "@chakra-ui/react";
+import { Link as ChakraLink } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import styled from "styled-components";
 
 type FooterNavProps = {
@@ -10,9 +11,10 @@ type FooterNavProps = {
 const FooterNav = ({ children, goto }: FooterNavProps) => {
   return (
     <StyledFooterNav>
-      <Link
+      <ChakraLink
+        as={RouterLink}
+        to={goto}
         className="animated-arrow"
-        href={goto}
         sx={{ textDecoration: "none" }}
       >
         <span className="the-arrow -left">
@@ -24,7 +26,7 @@ const FooterNav = ({ children, goto }: FooterNavProps) => {
             <span className="shaft"></span>
           </span>
         </span>
-      </Link>
+      </ChakraLink>
     </StyledFooterNav>
   );
 };

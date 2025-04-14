@@ -1,7 +1,7 @@
 {
   "name": "sohashi_website",
   "version": "0.1.0",
-  "homepage": "https://yuki-1184.github.io",
+  "homepage": "https://yuki-1184.github.io/my_webpage",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.11",

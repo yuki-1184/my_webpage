@@ -3,7 +3,7 @@ import {
   Box,
   Flex,
   HStack,
-  Link,
+  Link as ChakraLink,
   IconButton,
   useDisclosure,
   Stack,
@@ -15,6 +15,7 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 
+import { Link as RouterLink} from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { MoonLogo } from "../../data/Icons";
 import { StyledHeader } from "../Layout/style";
@@ -25,7 +26,7 @@ const Links = [
   { goto: "/", link: "Home" },
   { goto: "/about", link: "About" },
   { goto: "/projects", link: "Projects" },
-  { goto: "contact", link: "Contact" },
+  { goto: "/contact", link: "Contact" },
 ];
 
 type NavLinkProps = {
@@ -36,7 +37,9 @@ type NavLinkProps = {
 }
 
 const NavLink = ({ children, goto, link, setPage}: NavLinkProps) => (
-    <Link
+    <ChakraLink
+      as={RouterLink}
+      to={goto}
       px={2}
       py={1}
       rounded={"md"}
@@ -45,10 +48,9 @@ const NavLink = ({ children, goto, link, setPage}: NavLinkProps) => (
         bg: "rgba(186, 186, 186, 0.33)",
       }}
       onClick={() => setPage(link)}
-      href={goto}
     >
       {children}
-    </Link>
+    </ChakraLink>
 );
 
 type NavBarProps = {
@@ -72,9 +74,13 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
       >
         <Flex alignItems={"center"} w={"100%"}>
           <Box className="navbar-my-name" fontSize={"4xl"} fontWeight={"bold"}>
-            <Link href="/" _hover={{ textDecoration: "none" }}>
-              SO.
-            </Link>
+            <ChakraLink
+              as={RouterLink}
+              to="/"
+              _hover={{ textDecoration: "none" }}
+            >
+                SO.
+            </ChakraLink>
           </Box>
           <Spacer />
           <Box>
