@@ -1,8 +1,5 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import { Box, Text } from "@chakra-ui/react";
-import { SkipNavContent } from "@chakra-ui/skip-nav";
-import Layout, { PageWrapper } from "../components/Layout";
+import Layout from "../components/Layout";
 import FooterNav from "../components/FooterNav";
 import styled from "styled-components";
 
@@ -31,9 +28,9 @@ function Home() {
         </h2>
         <h3>Welcome to my website!!</h3>
         <p>
-          I'm a Master's student at Tohoku University researching AI and NLP,
-          after graduating from UC Santa Cruz with a B.S. in Computer
-          Engineering. I'm pursuing my career as a software engineer.
+          I&#39;m a Master&#39;s student at Tohoku University researching AI and
+          NLP, after graduating from UC Santa Cruz with a B.S. in Computer
+          Engineering. I&#39;m pursuing my career as a software engineer.
         </p>
         <p>
           A little bit about my background. I grew up in Tokyo Japan and moved

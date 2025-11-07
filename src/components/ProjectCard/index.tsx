@@ -3,7 +3,6 @@ import {
   useDisclosure,
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -41,14 +40,12 @@ const ProjectCard = (props: ProjectCardProps) => {
       </div>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"md"}>
         <DrawerOverlay />
-        <DrawerContent 
+        <DrawerContent
         // bgColor={"#FFFFE0"}
         >
           <DrawerCloseButton />
           <DrawerHeader padding={"0px"}>
-            <StyledDrawerHeader>
-              {props.title}
-            </StyledDrawerHeader>
+            <StyledDrawerHeader>{props.title}</StyledDrawerHeader>
           </DrawerHeader>
 
           <DrawerBody padding={"0px"}>
@@ -198,7 +195,7 @@ const StyledDrawerHeader = styled("div")`
   color: var(--notbg);
   background-color: var(--drawer-bgcolor);
   border-bottom: 1px solid var(--notbg);
-`
+`;
 
 const StyledDrawerBody = styled("div")`
   margin: 0;

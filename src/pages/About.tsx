@@ -1,5 +1,4 @@
 import React from "react";
-import { Box, Text } from "@chakra-ui/react";
 import FooterNav from "../components/FooterNav";
 import ExperienceCard from "../components/ExperienceCard";
 

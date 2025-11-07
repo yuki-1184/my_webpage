@@ -1,8 +1,3 @@
-import { link } from "node:fs";
-import { url } from "node:inspector";
-import { title } from "node:process";
-import { describe } from "node:test";
-
 export const EDUCATION = [
     {
         degree: "M.S. in Applied Information Sciences, Tohoku University",
