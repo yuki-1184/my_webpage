@@ -15,12 +15,12 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 
-import { Link as RouterLink} from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { MoonLogo } from "../../data/Icons";
 import { StyledHeader } from "../Layout/style";
 import styled, { css } from "styled-components";
-import myResume from '../../data/Resume_v3.1.2.pdf'
+import myResume from "../../data/Resume_v4_10232025.pdf";
 
 const Links = [
   { goto: "/", link: "Home" },
@@ -30,27 +30,27 @@ const Links = [
 ];
 
 type NavLinkProps = {
-  children: JSX.Element; 
+  children: JSX.Element;
   goto: string;
   link: string;
   setPage: (page: string) => void;
-}
+};
 
-const NavLink = ({ children, goto, link, setPage}: NavLinkProps) => (
-    <ChakraLink
-      as={RouterLink}
-      to={goto}
-      px={2}
-      py={1}
-      rounded={"md"}
-      _hover={{
-        textDecoration: "none",
-        bg: "rgba(186, 186, 186, 0.33)",
-      }}
-      onClick={() => setPage(link)}
-    >
-      {children}
-    </ChakraLink>
+const NavLink = ({ children, goto, link, setPage }: NavLinkProps) => (
+  <ChakraLink
+    as={RouterLink}
+    to={goto}
+    px={2}
+    py={1}
+    rounded={"md"}
+    _hover={{
+      textDecoration: "none",
+      bg: "rgba(186, 186, 186, 0.33)",
+    }}
+    onClick={() => setPage(link)}
+  >
+    {children}
+  </ChakraLink>
 );
 
 type NavBarProps = {
@@ -62,7 +62,7 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   // const [scrolled, setScrolled] = useState("false");
   const [isLargerThan900] = useMediaQuery("(min-width: 900px)");
-  const [ page, setPage ] = useState("");
+  const [page, setPage] = useState("");
 
   return (
     <StyledHeader>
@@ -79,7 +79,7 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
               to="/"
               _hover={{ textDecoration: "none" }}
             >
-                SO.
+              SO.
             </ChakraLink>
           </Box>
           <Spacer />
@@ -90,19 +90,23 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map(({ goto, link }) => (
-                <NavLink 
-                  key={link} 
-                  goto={goto} 
-                  link={link}
-                  setPage={setPage}
-                >
-                  <StyledNavLink className={link === page ? "navlink-selected" : "navlink-normal"}>
+                <NavLink key={link} goto={goto} link={link} setPage={setPage}>
+                  <StyledNavLink
+                    className={
+                      link === page ? "navlink-selected" : "navlink-normal"
+                    }
+                  >
                     {link}
                   </StyledNavLink>
                 </NavLink>
               ))}
               <StyledResume>
-                <a href={myResume} type="application/pdf" target="_blank" rel="noopener noreferrer">
+                <a
+                  href={myResume}
+                  type="application/pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Resume
                 </a>
               </StyledResume>
@@ -117,11 +121,18 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
           </Box>
           <IconButton
             size={"md"}
-            icon={isOpen 
-              ? <CloseIcon color={theme === "light" ? 'gray.700': 'gray.200'} /> 
-              : <HamburgerIcon color={theme === "light" ? 'gray.700': 'gray.200'} />
+            icon={
+              isOpen ? (
+                <CloseIcon
+                  color={theme === "light" ? "gray.700" : "gray.200"}
+                />
+              ) : (
+                <HamburgerIcon
+                  color={theme === "light" ? "gray.700" : "gray.200"}
+                />
+              )
             }
-            borderColor={theme === "light" ? 'gray.300': 'gray.700'}
+            borderColor={theme === "light" ? "gray.300" : "gray.700"}
             aria-label={"Open Menu"}
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
@@ -139,19 +150,23 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
             justifyContent={"center"}
           >
             {Links.map(({ goto, link }) => (
-              <NavLink 
-                key={link} 
-                goto={goto} 
-                link={link}
-                setPage={setPage}
-              >
-                <StyledNavLink className={link === page ? "navlink-selected" : "navlink-normal"}>
+              <NavLink key={link} goto={goto} link={link} setPage={setPage}>
+                <StyledNavLink
+                  className={
+                    link === page ? "navlink-selected" : "navlink-normal"
+                  }
+                >
                   {link}
                 </StyledNavLink>
               </NavLink>
             ))}
             <StyledResume>
-              <a href={myResume} type="application/pdf" target="_blank" rel="noopener noreferrer">
+              <a
+                href={myResume}
+                type="application/pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Resume
               </a>
             </StyledResume>
@@ -185,18 +200,18 @@ const NavBar = ({ theme, toggleTheme }: NavBarProps) => {
 
 type StyledNavLinkProps = {
   className: string;
-}
+};
 
 const StyledNavLink = styled("div")<StyledNavLinkProps>`
-  /* ${(props) => props.className === "navlink-selected"
-    ? css `
-      color: var(--navbar-page)
-    `
-    : css `
-      color: var(--notbg)
-    `
-  } */
-`
+  /* ${(props) =>
+    props.className === "navlink-selected"
+      ? css`
+          color: var(--navbar-page);
+        `
+      : css`
+          color: var(--notbg);
+        `} */
+`;
 
 const StyledResume = styled("div")`
   a {

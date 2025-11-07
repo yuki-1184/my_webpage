@@ -7,6 +7,7 @@ type ExperienceCardProps = {
   date: string;
   location: string;
   description: string;
+  blog?: string;
   url: string;
   technologies: string[];
 };
@@ -28,7 +29,39 @@ const ExperienceCard = (props: ExperienceCardProps) => {
             </strong>
           </span>
         </StyledTitle>
-        <h3>{props.date}</h3>
+        <div
+          style={{
+            marginLeft: "auto",
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            gap: "8px",
+            fontSize: "14px",
+            color: "var(--article-color)",
+            fontWeight: 500,
+            textAlign: "right",
+          }}
+        >
+          <span>{props.location}</span>
+          <span aria-hidden="true">•</span>
+          <span>{props.date}</span>
+        </div>
+        <p>
+          {props.blog ? (
+            <a
+              href={props.blog}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "var(--light-skyblue)",
+                fontWeight: 600,
+                textDecoration: "underline",
+              }}
+            >
+              Read Tech Blog →
+            </a>
+          ) : null}
+        </p>
         <p>{props.description}</p>
         <p>
           {props.technologies.map((tech, index) => (

@@ -15,42 +15,58 @@ export default function About() {
           <h1>About Me</h1>
           <div>
             <p>
-              Hello, my name is Satoki and I&#39;m a fourth year computer
-              engineering student at University of California, Santa Cruz.
-              I&#39;ve always been fascinated by the power of technology to
-              solve problems and make a positive impact in the world, and that
-              is what drew me to a career in computer engineering.
+              Hello, my name is Satoki. I am currently a first year Master&#39;s
+              student at <strong>Tohoku University</strong>, where I am focusing
+              on research in LLM interpretability, Artificial Intelligence and
+              Natural Language Processing (NLP).
             </p>
             <p>
-              Throughout my time at UC Santa Cruz, I&#39;ve gained a strong
-              foundation in computer science principles and have developed
-              skills in a variety of programming languages and frameworks.
-              I&#39;m constantly seeking new opportunities to learn and grow as
-              a professional, and am always open to challenges that push me to
-              think creatively and find innovative solutions.
+              I hold a B.S. in Computer Engineering from the
+              <strong>University of California, Santa Cruz</strong>. My academic
+              journey has given me a strong foundation in computer science, and
+              I&#39;m passionate about exploring how AI technology can be
+              applied to solve real-world problems.
             </p>
             <p>
-              In my free time, I enjoy exploring the outdoors, playing sports,
-              and staying up-to-date on the latest developments in the tech
-              industry. I&#39;m excited to connect with others in the field and
-              to begin my career as a software engineer.
+              I am always eager to learn new things, take on challenges that
+              push me to think creatively, and find innovative solutions.
+              I&#39;m excited to connect with others in the field and continue
+              my growth as an engineer.
             </p>
           </div>
         </StyledAboutIntro>
         <StyledTimelineEducation>
           <h2>Education</h2>
           <div className="outer">
-            <StyledContent>
-              <h3>
-                <strong>{EDUCATION.degree}</strong>
-              </h3>
-              <h4>({EDUCATION.date})</h4>
-              <StyledCourses>
-                {EDUCATION.courses.map((course, index) => (
-                  <li key={index}>{course}</li>
-                ))}
-              </StyledCourses>
-            </StyledContent>
+            {EDUCATION.map((education, index) => (
+              <StyledContent key={index}>
+                <h3>
+                  <strong>{education.degree}</strong>
+                </h3>
+                <h4>
+                  {education.school} - {education.date}
+                </h4>
+                <h4>
+                  <a
+                    href={education.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      textDecoration: "underline",
+                      textDecorationColor: "var(--light-skyblue)",
+                      textDecorationThickness: "2px",
+                    }}
+                  >
+                    {education.lab}
+                  </a>
+                </h4>
+                <StyledCourses>
+                  {education.courses.map((course, index) => (
+                    <li key={index}>{course}</li>
+                  ))}
+                </StyledCourses>
+              </StyledContent>
+            ))}
           </div>
         </StyledTimelineEducation>
         <StyledTimeLineExperience>

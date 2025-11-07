@@ -31,9 +31,9 @@ function Home() {
         </h2>
         <h3>Welcome to my website!!</h3>
         <p>
-          I'm an undergraduate student at University of California Santa Cruz
-          majoing in Computer Engineering / System Programming. I'm pursuing my
-          career as a software engineer.
+          I'm a Master's student at Tohoku University researching AI and NLP,
+          after graduating from UC Santa Cruz with a B.S. in Computer
+          Engineering. I'm pursuing my career as a software engineer.
         </p>
         <p>
           A little bit about my background. I grew up in Tokyo Japan and moved
