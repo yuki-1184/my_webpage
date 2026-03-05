@@ -65,6 +65,7 @@ export const BgText = styled("div")`
     color: var(--notbg);
     opacity: 0.04;
     z-index: 0;
+    pointer-events: none;
     animation-duration: 4s;
     animation-name: slidein;
   }
