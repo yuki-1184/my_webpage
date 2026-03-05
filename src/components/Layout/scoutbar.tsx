@@ -17,6 +17,16 @@ export const actions = () => [
     keyboardShortcut: ["p"],
   }),
   createScoutAction({
+    label: "Publications",
+    href: "/publications",
+    keyboardShortcut: ["u"],
+  }),
+  createScoutAction({
+    label: "Blog",
+    href: "/blog",
+    keyboardShortcut: ["b"],
+  }),
+  createScoutAction({
     label: "Contact",
     href: "/contact",
     keyboardShortcut: ["c"],

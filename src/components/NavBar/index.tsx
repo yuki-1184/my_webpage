@@ -26,6 +26,8 @@ const Links = [
   { goto: "/", link: "Home" },
   { goto: "/about", link: "About" },
   { goto: "/projects", link: "Projects" },
+  { goto: "/publications", link: "Publications" },
+  { goto: "/blog", link: "Blog" },
   { goto: "/contact", link: "Contact" },
 ];
 
