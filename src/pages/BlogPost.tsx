@@ -30,7 +30,10 @@ export default function BlogPost() {
           const titleMatch = fm.match(/^title:\s*["']?(.+?)["']?\s*$/m);
           const dateMatch = fm.match(/^date:\s*["']?(.+?)["']?\s*$/m);
           const tagsMatch = fm.match(/^tags:\s*\[(.+?)\]\s*$/m);
-          if (titleMatch) setTitle(titleMatch[1]);
+          if (titleMatch) {
+            setTitle(titleMatch[1]);
+            document.title = `${titleMatch[1]} | Satoki Ohashi (大橋 諭貴)`;
+          }
           if (dateMatch) setDate(dateMatch[1]);
           if (tagsMatch) {
             setTags(
@@ -52,13 +55,7 @@ export default function BlogPost() {
   }, [slug]);
 
   if (loading) {
-    return (
-      <Layout title="Blog">
-        <StyledPost>
-          <p className="status">読み込み中...</p>
-        </StyledPost>
-      </Layout>
-    );
+    return <Layout title="Blog"><StyledPost /></Layout>;
   }
 
   if (notFound) {

@@ -20,7 +20,7 @@ export default function Projects() {
           ))}
         </ul>
         <div>
-          <FooterNav goto="/contact">Enjoy your visit? Cotact me!</FooterNav>
+          <FooterNav goto="/contact">Enjoy your visit? Contact me!</FooterNav>
         </div>
       </StyledProjects>
     </Layout>

@@ -28,6 +28,12 @@ const Layout = ({ children, title }: LayoutProps) => {
     localStorage.setItem(LOCAL_STORAGE_KEY, theme);
   }, [theme]);
 
+  useEffect(() => {
+    const siteName = "Satoki Ohashi (大橋 諭貴)";
+    document.title =
+      title === "Home" ? siteName : `${title} | ${siteName}`;
+  }, [title]);
+
   const toggleTheme = () => {
     if (theme === "light" || theme === "") {
       setTheme("dark");

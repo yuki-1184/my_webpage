@@ -29,9 +29,7 @@ export default function Blog() {
     <Layout title="Blog">
       <StyledBlog>
         <h1>Blog</h1>
-        {loading ? (
-          <p className="status">読み込み中...</p>
-        ) : posts.length === 0 ? (
+        {loading ? null : posts.length === 0 ? (
           <p className="status">まだ投稿がありません。</p>
         ) : (
           <ul>
