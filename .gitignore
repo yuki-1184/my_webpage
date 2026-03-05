@@ -2,6 +2,9 @@ node_modules
 build
 dist
 
+# Playwright MCP screenshots
+.playwright-mcp/
+
 # Logs
 logs
 *.log
