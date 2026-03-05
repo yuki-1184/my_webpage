@@ -6,10 +6,10 @@ import getLogo from "../../data/Icons";
 const SocialMedia = [
   { name: "GitHub", url: "https://github.com/yuki-1184" },
   { name: "Instagram", url: "https://www.instagram.com/Satoki716" },
-  { name: "Facebook", url: "https://www.facebook.com/satoki.ohashi.1" },
+  { name: "X", url: "https://x.com/satoki1049" },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/satoki-ohashi-4ba513253/",
+    url: "https://www.linkedin.com/in/satoki-ohashi-8146b0224/",
   },
 ];
 
